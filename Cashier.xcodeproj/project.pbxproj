@@ -3,12 +3,40 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		087CB3F1258E77D500C6F9DA /* Cashier.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 087CB3DB258E77D400C6F9DA /* Cashier.xcdatamodeld */; };
-		087CB3F2258E77D500C6F9DA /* Cashier.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 087CB3DB258E77D400C6F9DA /* Cashier.xcdatamodeld */; };
+		080D2FC725D18ACF00F2D6E9 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080D2FC625D18ACF00F2D6E9 /* CardDetailView.swift */; };
+		080D2FC825D18ACF00F2D6E9 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080D2FC625D18ACF00F2D6E9 /* CardDetailView.swift */; };
+		080D2FCE25D192FA00F2D6E9 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080D2FCD25D192FA00F2D6E9 /* Keyboard.swift */; };
+		080D2FCF25D192FA00F2D6E9 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080D2FCD25D192FA00F2D6E9 /* Keyboard.swift */; };
+		081A22CD25D03FA8007D5E75 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A22CC25D03FA8007D5E75 /* ItemModel.swift */; };
+		081A22CE25D03FA8007D5E75 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A22CC25D03FA8007D5E75 /* ItemModel.swift */; };
+		081A31CA258FD9780061EA1E /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A31C9258FD9780061EA1E /* TabBar.swift */; };
+		081A31CB258FD9780061EA1E /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A31C9258FD9780061EA1E /* TabBar.swift */; };
+		081A31CF258FD98E0061EA1E /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A31CE258FD98E0061EA1E /* SideBar.swift */; };
+		081A31D0258FD98E0061EA1E /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A31CE258FD98E0061EA1E /* SideBar.swift */; };
+		081A31D7258FD9C70061EA1E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A31D6258FD9C70061EA1E /* HomeView.swift */; };
+		081A31D8258FD9C70061EA1E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A31D6258FD9C70061EA1E /* HomeView.swift */; };
+		081A31E1258FD9E40061EA1E /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A31E0258FD9E40061EA1E /* CardsView.swift */; };
+		081A31E2258FD9E40061EA1E /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A31E0258FD9E40061EA1E /* CardsView.swift */; };
+		081A31E6258FD9EC0061EA1E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A31E5258FD9EC0061EA1E /* SettingsView.swift */; };
+		081A31E7258FD9EC0061EA1E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A31E5258FD9EC0061EA1E /* SettingsView.swift */; };
+		081D663D25938E0B001052AF /* AllExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081D663C25938E0B001052AF /* AllExpensesView.swift */; };
+		081D663E25938E0B001052AF /* AllExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081D663C25938E0B001052AF /* AllExpensesView.swift */; };
+		082DDE6725A0F0A300309A53 /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082DDE6625A0F0A300309A53 /* CardItem.swift */; };
+		082DDE6825A0F0A300309A53 /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082DDE6625A0F0A300309A53 /* CardItem.swift */; };
+		0854D83725C8527500C91B22 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0854D83625C8527500C91B22 /* Launch Screen.storyboard */; };
+		0854D83825C8527500C91B22 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0854D83625C8527500C91B22 /* Launch Screen.storyboard */; };
+		0854D84225C8535B00C91B22 /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0854D84125C8535B00C91B22 /* AddExpenseView.swift */; };
+		0854D84325C8535B00C91B22 /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0854D84125C8535B00C91B22 /* AddExpenseView.swift */; };
+		0867D1E725E533940061F0FE /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0867D1E625E533930061F0FE /* ItemRow.swift */; };
+		0867D1E825E533940061F0FE /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0867D1E625E533930061F0FE /* ItemRow.swift */; };
+		08784A6025D1B2BB008EC3C1 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08784A5F25D1B2BB008EC3C1 /* SearchView.swift */; };
+		08784A6125D1B2BB008EC3C1 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08784A5F25D1B2BB008EC3C1 /* SearchView.swift */; };
+		087CB3F1258E77D500C6F9DA /* Cashier4.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 087CB3DB258E77D400C6F9DA /* Cashier4.xcdatamodeld */; };
+		087CB3F2258E77D500C6F9DA /* Cashier4.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 087CB3DB258E77D400C6F9DA /* Cashier4.xcdatamodeld */; };
 		087CB3F3258E77D500C6F9DA /* CashierApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087CB3DD258E77D400C6F9DA /* CashierApp.swift */; };
 		087CB3F4258E77D500C6F9DA /* CashierApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087CB3DD258E77D400C6F9DA /* CashierApp.swift */; };
 		087CB3F5258E77D500C6F9DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087CB3DE258E77D400C6F9DA /* ContentView.swift */; };
@@ -17,9 +45,34 @@
 		087CB3F8258E77D500C6F9DA /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087CB3DF258E77D400C6F9DA /* Persistence.swift */; };
 		087CB3F9258E77D500C6F9DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 087CB3E0258E77D500C6F9DA /* Assets.xcassets */; };
 		087CB3FA258E77D500C6F9DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 087CB3E0258E77D500C6F9DA /* Assets.xcassets */; };
+		0887A35825CD945200D968E5 /* iPad Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0887A35725CD945200D968E5 /* iPad Icon.png */; };
+		0887A35925CD945200D968E5 /* iPad Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0887A35725CD945200D968E5 /* iPad Icon.png */; };
+		0887A36125CD956400D968E5 /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0887A36025CD956400D968E5 /* AddCardView.swift */; };
+		0887A36225CD956400D968E5 /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0887A36025CD956400D968E5 /* AddCardView.swift */; };
+		088AE97A25CEEA3900CF5876 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088AE97925CEEA3900CF5876 /* CardModel.swift */; };
+		088AE97B25CEEA3900CF5876 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088AE97925CEEA3900CF5876 /* CardModel.swift */; };
+		08D342FD2590F5370042D66B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D342FC2590F5370042D66B /* CloudKit.framework */; };
+		08D3430C2590F7AE0042D66B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D3430B2590F7AE0042D66B /* CloudKit.framework */; };
+		08F3E16625E4815E002A7868 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F3E16525E4815E002A7868 /* AddItemView.swift */; };
+		08F3E16725E4815E002A7868 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F3E16525E4815E002A7868 /* AddItemView.swift */; };
+		08F6B27D25E7220A00F9AE38 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 08F6B27C25E7220A00F9AE38 /* SwiftUICharts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		080D2FC625D18ACF00F2D6E9 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
+		080D2FCD25D192FA00F2D6E9 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		081A22CC25D03FA8007D5E75 /* ItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		081A31C9258FD9780061EA1E /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		081A31CE258FD98E0061EA1E /* SideBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
+		081A31D6258FD9C70061EA1E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		081A31E0258FD9E40061EA1E /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
+		081A31E5258FD9EC0061EA1E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		081D663C25938E0B001052AF /* AllExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllExpensesView.swift; sourceTree = "<group>"; };
+		082DDE6625A0F0A300309A53 /* CardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItem.swift; sourceTree = "<group>"; };
+		0854D83625C8527500C91B22 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		0854D84125C8535B00C91B22 /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
+		0867D1E625E533930061F0FE /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
+		08784A5F25D1B2BB008EC3C1 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		087CB3DC258E77D400C6F9DA /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		087CB3DD258E77D400C6F9DA /* CashierApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashierApp.swift; sourceTree = "<group>"; };
 		087CB3DE258E77D400C6F9DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,6 +83,13 @@
 		087CB3ED258E77D500C6F9DA /* Cashier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		087CB3EF258E77D500C6F9DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		087CB3F0258E77D500C6F9DA /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		0887A35725CD945200D968E5 /* iPad Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPad Icon.png"; sourceTree = "<group>"; };
+		0887A36025CD956400D968E5 /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
+		088AE97925CEEA3900CF5876 /* CardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		08D342F82590F5310042D66B /* Cashier.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cashier.entitlements; sourceTree = "<group>"; };
+		08D342FC2590F5370042D66B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		08D3430B2590F7AE0042D66B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		08F3E16525E4815E002A7868 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08D342FD2590F5370042D66B /* CloudKit.framework in Frameworks */,
+				08F6B27D25E7220A00F9AE38 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,19 +106,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08D3430C2590F7AE0042D66B /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		081A31D3258FD9930061EA1E /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				081A31C9258FD9780061EA1E /* TabBar.swift */,
+				081A31CE258FD98E0061EA1E /* SideBar.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		081D664125938E4F001052AF /* Supporting Views */ = {
+			isa = PBXGroup;
+			children = (
+				081A31E5258FD9EC0061EA1E /* SettingsView.swift */,
+				08F3E16525E4815E002A7868 /* AddItemView.swift */,
+				081D663C25938E0B001052AF /* AllExpensesView.swift */,
+				0854D84125C8535B00C91B22 /* AddExpenseView.swift */,
+				0887A36025CD956400D968E5 /* AddCardView.swift */,
+				080D2FC625D18ACF00F2D6E9 /* CardDetailView.swift */,
+				0854D83625C8527500C91B22 /* Launch Screen.storyboard */,
+			);
+			path = "Supporting Views";
+			sourceTree = "<group>";
+		};
 		087CB3D5258E77D400C6F9DA = {
 			isa = PBXGroup;
 			children = (
+				08D342F82590F5310042D66B /* Cashier.entitlements */,
 				087CB3DA258E77D400C6F9DA /* Shared */,
 				087CB3E7258E77D500C6F9DA /* iOS */,
 				087CB3EE258E77D500C6F9DA /* macOS */,
 				087CB3E6258E77D500C6F9DA /* Products */,
+				08D342FB2590F5370042D66B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,9 +153,15 @@
 			children = (
 				087CB3DD258E77D400C6F9DA /* CashierApp.swift */,
 				087CB3DE258E77D400C6F9DA /* ContentView.swift */,
-				087CB3DF258E77D400C6F9DA /* Persistence.swift */,
+				081A31D6258FD9C70061EA1E /* HomeView.swift */,
+				081A31E0258FD9E40061EA1E /* CardsView.swift */,
+				08784A5F25D1B2BB008EC3C1 /* SearchView.swift */,
+				081D664125938E4F001052AF /* Supporting Views */,
+				08FB483625CC507700831828 /* Items */,
+				081A31D3258FD9930061EA1E /* Navigation */,
+				08D343002590F5C30042D66B /* Model */,
 				087CB3E0258E77D500C6F9DA /* Assets.xcassets */,
-				087CB3DB258E77D400C6F9DA /* Cashier.xcdatamodeld */,
+				0887A35725CD945200D968E5 /* iPad Icon.png */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -98,6 +192,36 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
+		08D342FB2590F5370042D66B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08D3430B2590F7AE0042D66B /* CloudKit.framework */,
+				08D342FC2590F5370042D66B /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08D343002590F5C30042D66B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				081A22CC25D03FA8007D5E75 /* ItemModel.swift */,
+				088AE97925CEEA3900CF5876 /* CardModel.swift */,
+				087CB3DF258E77D400C6F9DA /* Persistence.swift */,
+				080D2FCD25D192FA00F2D6E9 /* Keyboard.swift */,
+				087CB3DB258E77D400C6F9DA /* Cashier4.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		08FB483625CC507700831828 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				082DDE6625A0F0A300309A53 /* CardItem.swift */,
+				0867D1E625E533930061F0FE /* ItemRow.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -114,6 +238,9 @@
 			dependencies = (
 			);
 			name = "Cashier (iOS)";
+			packageProductDependencies = (
+				08F6B27C25E7220A00F9AE38 /* SwiftUICharts */,
+			);
 			productName = "Cashier (iOS)";
 			productReference = 087CB3E5258E77D500C6F9DA /* Cashier.app */;
 			productType = "com.apple.product-type.application";
@@ -161,6 +288,9 @@
 				Base,
 			);
 			mainGroup = 087CB3D5258E77D400C6F9DA;
+			packageReferences = (
+				08F6B27B25E7220A00F9AE38 /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 087CB3E6258E77D500C6F9DA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -176,6 +306,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0887A35825CD945200D968E5 /* iPad Icon.png in Resources */,
+				0854D83725C8527500C91B22 /* Launch Screen.storyboard in Resources */,
 				087CB3F9258E77D500C6F9DA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,6 +316,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0887A35925CD945200D968E5 /* iPad Icon.png in Resources */,
+				0854D83825C8527500C91B22 /* Launch Screen.storyboard in Resources */,
 				087CB3FA258E77D500C6F9DA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,10 +329,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				087CB3F1258E77D500C6F9DA /* Cashier.xcdatamodeld in Sources */,
+				087CB3F1258E77D500C6F9DA /* Cashier4.xcdatamodeld in Sources */,
+				082DDE6725A0F0A300309A53 /* CardItem.swift in Sources */,
 				087CB3F7258E77D500C6F9DA /* Persistence.swift in Sources */,
+				081A22CD25D03FA8007D5E75 /* ItemModel.swift in Sources */,
+				0854D84225C8535B00C91B22 /* AddExpenseView.swift in Sources */,
+				081A31E1258FD9E40061EA1E /* CardsView.swift in Sources */,
+				081D663D25938E0B001052AF /* AllExpensesView.swift in Sources */,
+				0867D1E725E533940061F0FE /* ItemRow.swift in Sources */,
+				080D2FC725D18ACF00F2D6E9 /* CardDetailView.swift in Sources */,
+				0887A36125CD956400D968E5 /* AddCardView.swift in Sources */,
+				08F3E16625E4815E002A7868 /* AddItemView.swift in Sources */,
 				087CB3F3258E77D500C6F9DA /* CashierApp.swift in Sources */,
+				08784A6025D1B2BB008EC3C1 /* SearchView.swift in Sources */,
+				081A31E6258FD9EC0061EA1E /* SettingsView.swift in Sources */,
+				081A31D7258FD9C70061EA1E /* HomeView.swift in Sources */,
 				087CB3F5258E77D500C6F9DA /* ContentView.swift in Sources */,
+				080D2FCE25D192FA00F2D6E9 /* Keyboard.swift in Sources */,
+				081A31CF258FD98E0061EA1E /* SideBar.swift in Sources */,
+				081A31CA258FD9780061EA1E /* TabBar.swift in Sources */,
+				088AE97A25CEEA3900CF5876 /* CardModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,10 +356,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				087CB3F2258E77D500C6F9DA /* Cashier.xcdatamodeld in Sources */,
+				087CB3F2258E77D500C6F9DA /* Cashier4.xcdatamodeld in Sources */,
+				082DDE6825A0F0A300309A53 /* CardItem.swift in Sources */,
 				087CB3F8258E77D500C6F9DA /* Persistence.swift in Sources */,
+				081A22CE25D03FA8007D5E75 /* ItemModel.swift in Sources */,
+				0854D84325C8535B00C91B22 /* AddExpenseView.swift in Sources */,
+				081A31E2258FD9E40061EA1E /* CardsView.swift in Sources */,
+				081D663E25938E0B001052AF /* AllExpensesView.swift in Sources */,
+				0867D1E825E533940061F0FE /* ItemRow.swift in Sources */,
+				080D2FC825D18ACF00F2D6E9 /* CardDetailView.swift in Sources */,
+				0887A36225CD956400D968E5 /* AddCardView.swift in Sources */,
+				08F3E16725E4815E002A7868 /* AddItemView.swift in Sources */,
 				087CB3F4258E77D500C6F9DA /* CashierApp.swift in Sources */,
+				08784A6125D1B2BB008EC3C1 /* SearchView.swift in Sources */,
+				081A31E7258FD9EC0061EA1E /* SettingsView.swift in Sources */,
+				081A31D8258FD9C70061EA1E /* HomeView.swift in Sources */,
 				087CB3F6258E77D500C6F9DA /* ContentView.swift in Sources */,
+				080D2FCF25D192FA00F2D6E9 /* Keyboard.swift in Sources */,
+				081A31D0258FD98E0061EA1E /* SideBar.swift in Sources */,
+				081A31CB258FD9780061EA1E /* TabBar.swift in Sources */,
+				088AE97B25CEEA3900CF5876 /* CardModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +498,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Cashier.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L8T2DBPJ39;
 				ENABLE_PREVIEWS = YES;
@@ -341,11 +509,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = piltch.trevor.Cashier;
+				PRODUCT_BUNDLE_IDENTIFIER = "piltch.trevor.CloudKit-Test";
 				PRODUCT_NAME = Cashier;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -354,6 +523,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Cashier.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L8T2DBPJ39;
 				ENABLE_PREVIEWS = YES;
@@ -363,11 +534,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = piltch.trevor.Cashier;
+				PRODUCT_BUNDLE_IDENTIFIER = "piltch.trevor.CloudKit-Test";
 				PRODUCT_NAME = Cashier;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -378,9 +550,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = L8T2DBPJ39;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -389,8 +562,9 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = piltch.trevor.Cashier;
+				PRODUCT_BUNDLE_IDENTIFIER = "piltch.trevor.CloudKit-Test";
 				PRODUCT_NAME = Cashier;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -402,9 +576,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = L8T2DBPJ39;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -413,8 +588,9 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = piltch.trevor.Cashier;
+				PRODUCT_BUNDLE_IDENTIFIER = "piltch.trevor.CloudKit-Test";
 				PRODUCT_NAME = Cashier;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -452,14 +628,33 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		08F6B27B25E7220A00F9AE38 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		08F6B27C25E7220A00F9AE38 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08F6B27B25E7220A00F9AE38 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
+
 /* Begin XCVersionGroup section */
-		087CB3DB258E77D400C6F9DA /* Cashier.xcdatamodeld */ = {
+		087CB3DB258E77D400C6F9DA /* Cashier4.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				087CB3DC258E77D400C6F9DA /* Shared.xcdatamodel */,
 			);
 			currentVersion = 087CB3DC258E77D400C6F9DA /* Shared.xcdatamodel */;
-			path = Cashier.xcdatamodeld;
+			path = Cashier4.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

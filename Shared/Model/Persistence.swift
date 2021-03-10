@@ -7,16 +7,32 @@
 
 import CoreData
 
+// Core Data stuff
+var persistentContainer: NSPersistentContainer = {
+//    let storeURL = AppGroup.facts.containerURL.appendingPathComponent("World.plist")
+//    let description = NSPersistentStoreDescription(url: storeURL)
+    let container = NSPersistentContainer(name: "Cashier4")
+//    container.persistentStoreDescriptions = [description]
+    container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+        if let error = error as NSError? {
+//            fatalError("Unresolved error \(error), \(error.userInfo)")
+        }
+    })
+    return container
+}()
+
 struct PersistenceController {
     static let shared = PersistenceController()
 
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-        }
+        
+        let newCard = CreditCard(context: viewContext)
+        newCard.name = "Testing"
+        newCard.company = "norway"
+        newCard.number = "1234-5678-0000"
+        
         do {
             try viewContext.save()
         } catch {
@@ -28,10 +44,12 @@ struct PersistenceController {
         return result
     }()
 
-    let container: NSPersistentCloudKitContainer
+    let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
-        container = NSPersistentCloudKitContainer(name: "Cashier")
+        container = NSPersistentContainer(name: "Cashier4")
+        print("In Memory")
+        
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
@@ -53,3 +71,4 @@ struct PersistenceController {
         })
     }
 }
+
