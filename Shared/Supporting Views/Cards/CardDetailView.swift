@@ -17,6 +17,7 @@ struct CardDetailView: View {
     @Binding var showCardDetail: Bool
     
     @State var deleteCard = false
+    @State var showEditCard = false
     
     var body: some View {
         VStack {
@@ -28,6 +29,15 @@ struct CardDetailView: View {
                 }
                 
                 Spacer()
+                
+                if cardModel.getValue(obj: cardModel.data[index]).company != "Cash" {
+                    Button(action: {
+                        cardModel.selectedObject = [cardModel.data[index]]
+                        showEditCard = true
+                    }) {
+                        Text("Edit")
+                    }
+                }
             }
             .padding()
             
@@ -37,23 +47,41 @@ struct CardDetailView: View {
                 .frame(width: screen.width - 32, height: 217)
             
             ScrollView(.vertical, showsIndicators: false) {
-                ForEach(expenseModel.data.indices.filter({ index in
-                    "\(cardModel.getValue(obj: cardModel.data[index]).company): \(cardModel.getValue(obj: cardModel.data[index]).number)" == expenseModel.getValue(obj: expenseModel.data[index]).selectedCard
-                }), id: \.self) { index in
-                    ExpenseRow(expenseModel: expenseModel.getValue(obj: expenseModel.data[index]))
+                ForEach(expenseModel.data.filter {
+                    expenseModel.getValue(obj: $0).selectedCard == "\(cardModel.getValue(obj: cardModel.data[index]).company): \(cardModel.getValue(obj: cardModel.data[index]).number)"
+                }, id: \.self) { data in
+                    ExpenseRow(expenseModel: expenseModel.getValue(obj: data))
                 }
             }
             .padding(.top)
             
+            if cardModel.getValue(obj: cardModel.data[index]).company != "Cash" {
+                Button(action: {
+                    deleteCard = true
+                }) {
+                    Text("Delete")
+                        .foregroundColor(.white)
+                        .frame(width: screen.width - 32, height: 44)
+                        .background(Color.red)
+                        .cornerRadius(11)
+                        .padding(.bottom)
+                }
+            }
+            
+            
             Spacer()
         }
         .background(Color("Background"))
-            .actionSheet(isPresented: $deleteCard) {
-                ActionSheet(title: Text("Are you sure you want to delete this card? This action cannot be undone"), buttons:
-                    [.destructive(Text("Delete"), action: {
-                        showCardDetail = false
-                        cardModel.deleteData(id: cardModel.getValue(obj: cardModel.data[index]).id)
-                    }),.cancel()])
+        .actionSheet(isPresented: $deleteCard) {
+            ActionSheet(title: Text("Are you sure you want to delete this card? This action cannot be undone"), buttons:
+                            [.destructive(Text("Delete"), action: {
+                cardModel.deleteData(id: cardModel.getValue(obj: cardModel.data[index]).id)
+                index -= 1
+                showCardDetail = false
+            }),.cancel()])
+        }
+        .sheet(isPresented: $showEditCard) {
+            CardEditView(newCard: cardModel, gradientNumber: cardModel.getValue(obj: cardModel.data[index]).gradient, cardProvider: cardModel.getValue(obj: cardModel.data[index]).company, cardNumber: cardModel.getValue(obj: cardModel.data[index]).number, name: cardModel.getValue(obj: cardModel.data[index]).name)
         }
     }
     

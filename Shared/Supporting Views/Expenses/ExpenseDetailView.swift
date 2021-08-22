@@ -75,6 +75,7 @@ struct ExpenseDetailView: View {
                 }
             }
         }
+        .listStyle(InsetGroupedListStyle())
         .navigationTitle(expenseModel.item)
         .navigationBarItems(trailing:
                                 Button(action: {

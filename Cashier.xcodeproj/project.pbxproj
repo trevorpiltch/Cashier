@@ -8,71 +8,66 @@
 
 /* Begin PBXBuildFile section */
 		080D2FC725D18ACF00F2D6E9 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080D2FC625D18ACF00F2D6E9 /* CardDetailView.swift */; };
-		080D2FC825D18ACF00F2D6E9 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080D2FC625D18ACF00F2D6E9 /* CardDetailView.swift */; };
 		080D2FCE25D192FA00F2D6E9 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080D2FCD25D192FA00F2D6E9 /* Keyboard.swift */; };
-		080D2FCF25D192FA00F2D6E9 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080D2FCD25D192FA00F2D6E9 /* Keyboard.swift */; };
-		081A22CD25D03FA8007D5E75 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A22CC25D03FA8007D5E75 /* ItemModel.swift */; };
-		081A22CE25D03FA8007D5E75 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A22CC25D03FA8007D5E75 /* ItemModel.swift */; };
-		081A31CA258FD9780061EA1E /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A31C9258FD9780061EA1E /* TabBar.swift */; };
-		081A31CB258FD9780061EA1E /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A31C9258FD9780061EA1E /* TabBar.swift */; };
-		081A31CF258FD98E0061EA1E /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A31CE258FD98E0061EA1E /* SideBar.swift */; };
-		081A31D0258FD98E0061EA1E /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A31CE258FD98E0061EA1E /* SideBar.swift */; };
+		081A22CD25D03FA8007D5E75 /* ExpenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A22CC25D03FA8007D5E75 /* ExpenseModel.swift */; };
 		081A31D7258FD9C70061EA1E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A31D6258FD9C70061EA1E /* HomeView.swift */; };
-		081A31D8258FD9C70061EA1E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A31D6258FD9C70061EA1E /* HomeView.swift */; };
 		081A31E1258FD9E40061EA1E /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A31E0258FD9E40061EA1E /* CardsView.swift */; };
-		081A31E2258FD9E40061EA1E /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A31E0258FD9E40061EA1E /* CardsView.swift */; };
 		081A31E6258FD9EC0061EA1E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A31E5258FD9EC0061EA1E /* SettingsView.swift */; };
-		081A31E7258FD9EC0061EA1E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A31E5258FD9EC0061EA1E /* SettingsView.swift */; };
+		081C41B326C6F66E00CBFA7C /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C41B226C6F66E00CBFA7C /* OnBoardingView.swift */; };
 		081D663D25938E0B001052AF /* AllExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081D663C25938E0B001052AF /* AllExpensesView.swift */; };
-		081D663E25938E0B001052AF /* AllExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081D663C25938E0B001052AF /* AllExpensesView.swift */; };
+		081F6A19260157DC000896A6 /* CashCardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081F6A18260157DC000896A6 /* CashCardItem.swift */; };
 		082DDE6725A0F0A300309A53 /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082DDE6625A0F0A300309A53 /* CardItem.swift */; };
-		082DDE6825A0F0A300309A53 /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082DDE6625A0F0A300309A53 /* CardItem.swift */; };
+		083D30C426D15D4B00E1FC13 /* AppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D30C326D15D4B00E1FC13 /* AppIconView.swift */; };
+		083D30C626D15DF100E1FC13 /* Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 083D30C526D15DF100E1FC13 /* Blue.png */; };
+		083D30CB26D15E1100E1FC13 /* White.png in Resources */ = {isa = PBXBuildFile; fileRef = 083D30C926D15E1000E1FC13 /* White.png */; };
+		083D30CF26D15E2B00E1FC13 /* Green.png in Resources */ = {isa = PBXBuildFile; fileRef = 083D30CD26D15E2B00E1FC13 /* Green.png */; };
 		0854D83725C8527500C91B22 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0854D83625C8527500C91B22 /* Launch Screen.storyboard */; };
-		0854D83825C8527500C91B22 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0854D83625C8527500C91B22 /* Launch Screen.storyboard */; };
 		0854D84225C8535B00C91B22 /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0854D84125C8535B00C91B22 /* AddExpenseView.swift */; };
-		0854D84325C8535B00C91B22 /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0854D84125C8535B00C91B22 /* AddExpenseView.swift */; };
-		0867D1E725E533940061F0FE /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0867D1E625E533930061F0FE /* ItemRow.swift */; };
-		0867D1E825E533940061F0FE /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0867D1E625E533930061F0FE /* ItemRow.swift */; };
+		0855C7E726A0AD1F001C06FE /* RoundedRectImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0855C7E626A0AD1F001C06FE /* RoundedRectImageItem.swift */; };
+		0862130926D2F05100078713 /* TagDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0862130826D2F05100078713 /* TagDetailView.swift */; };
+		0867D1E725E533940061F0FE /* ExpenseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0867D1E625E533930061F0FE /* ExpenseRow.swift */; };
 		08784A6025D1B2BB008EC3C1 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08784A5F25D1B2BB008EC3C1 /* SearchView.swift */; };
-		08784A6125D1B2BB008EC3C1 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08784A5F25D1B2BB008EC3C1 /* SearchView.swift */; };
+		087B179E26C9675500C7FBFA /* ExpenseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087B179D26C9675500C7FBFA /* ExpenseDetailView.swift */; };
 		087CB3F1258E77D500C6F9DA /* Cashier4.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 087CB3DB258E77D400C6F9DA /* Cashier4.xcdatamodeld */; };
-		087CB3F2258E77D500C6F9DA /* Cashier4.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 087CB3DB258E77D400C6F9DA /* Cashier4.xcdatamodeld */; };
 		087CB3F3258E77D500C6F9DA /* CashierApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087CB3DD258E77D400C6F9DA /* CashierApp.swift */; };
-		087CB3F4258E77D500C6F9DA /* CashierApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087CB3DD258E77D400C6F9DA /* CashierApp.swift */; };
 		087CB3F5258E77D500C6F9DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087CB3DE258E77D400C6F9DA /* ContentView.swift */; };
-		087CB3F6258E77D500C6F9DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087CB3DE258E77D400C6F9DA /* ContentView.swift */; };
 		087CB3F7258E77D500C6F9DA /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087CB3DF258E77D400C6F9DA /* Persistence.swift */; };
-		087CB3F8258E77D500C6F9DA /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087CB3DF258E77D400C6F9DA /* Persistence.swift */; };
 		087CB3F9258E77D500C6F9DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 087CB3E0258E77D500C6F9DA /* Assets.xcassets */; };
-		087CB3FA258E77D500C6F9DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 087CB3E0258E77D500C6F9DA /* Assets.xcassets */; };
 		0887A35825CD945200D968E5 /* iPad Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0887A35725CD945200D968E5 /* iPad Icon.png */; };
-		0887A35925CD945200D968E5 /* iPad Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0887A35725CD945200D968E5 /* iPad Icon.png */; };
 		0887A36125CD956400D968E5 /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0887A36025CD956400D968E5 /* AddCardView.swift */; };
-		0887A36225CD956400D968E5 /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0887A36025CD956400D968E5 /* AddCardView.swift */; };
 		088AE97A25CEEA3900CF5876 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088AE97925CEEA3900CF5876 /* CardModel.swift */; };
-		088AE97B25CEEA3900CF5876 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088AE97925CEEA3900CF5876 /* CardModel.swift */; };
+		089135C726D0590200B21F85 /* CardEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089135C626D0590200B21F85 /* CardEditView.swift */; };
 		08D342FD2590F5370042D66B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D342FC2590F5370042D66B /* CloudKit.framework */; };
-		08D3430C2590F7AE0042D66B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D3430B2590F7AE0042D66B /* CloudKit.framework */; };
-		08F3E16625E4815E002A7868 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F3E16525E4815E002A7868 /* AddItemView.swift */; };
-		08F3E16725E4815E002A7868 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F3E16525E4815E002A7868 /* AddItemView.swift */; };
+		08D42E0726D2D0DC00B84B09 /* ManageTagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D42E0626D2D0DC00B84B09 /* ManageTagsView.swift */; };
+		08EEBAC726C84816008F0DD0 /* TagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EEBAC626C84816008F0DD0 /* TagModel.swift */; };
+		08EEBAC926C84A12008F0DD0 /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EEBAC826C84A12008F0DD0 /* TagItem.swift */; };
+		08EEBACB26C84EF9008F0DD0 /* AddTagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EEBACA26C84EF9008F0DD0 /* AddTagItem.swift */; };
 		08F6B27D25E7220A00F9AE38 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 08F6B27C25E7220A00F9AE38 /* SwiftUICharts */; };
+		08FF53B026D0320700022982 /* EditExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FF53AF26D0320600022982 /* EditExpenseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		080D2FC625D18ACF00F2D6E9 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
 		080D2FCD25D192FA00F2D6E9 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
-		081A22CC25D03FA8007D5E75 /* ItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
-		081A31C9258FD9780061EA1E /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
-		081A31CE258FD98E0061EA1E /* SideBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
+		081A22CC25D03FA8007D5E75 /* ExpenseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseModel.swift; sourceTree = "<group>"; };
 		081A31D6258FD9C70061EA1E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		081A31E0258FD9E40061EA1E /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
 		081A31E5258FD9EC0061EA1E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		081C41B226C6F66E00CBFA7C /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		081D663C25938E0B001052AF /* AllExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllExpensesView.swift; sourceTree = "<group>"; };
+		081F6A18260157DC000896A6 /* CashCardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashCardItem.swift; sourceTree = "<group>"; };
 		082DDE6625A0F0A300309A53 /* CardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItem.swift; sourceTree = "<group>"; };
+		083D30C326D15D4B00E1FC13 /* AppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconView.swift; sourceTree = "<group>"; };
+		083D30C526D15DF100E1FC13 /* Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue.png; sourceTree = "<group>"; };
+		083D30C926D15E1000E1FC13 /* White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = White.png; sourceTree = "<group>"; };
+		083D30CD26D15E2B00E1FC13 /* Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Green.png; sourceTree = "<group>"; };
 		0854D83625C8527500C91B22 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		0854D84125C8535B00C91B22 /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
-		0867D1E625E533930061F0FE /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
+		0855C7E626A0AD1F001C06FE /* RoundedRectImageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedRectImageItem.swift; sourceTree = "<group>"; };
+		0862130826D2F05100078713 /* TagDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDetailView.swift; sourceTree = "<group>"; };
+		0867D1E625E533930061F0FE /* ExpenseRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRow.swift; sourceTree = "<group>"; };
 		08784A5F25D1B2BB008EC3C1 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		087B179D26C9675500C7FBFA /* ExpenseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailView.swift; sourceTree = "<group>"; };
 		087CB3DC258E77D400C6F9DA /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		087CB3DD258E77D400C6F9DA /* CashierApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashierApp.swift; sourceTree = "<group>"; };
 		087CB3DE258E77D400C6F9DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,16 +75,20 @@
 		087CB3E0258E77D500C6F9DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		087CB3E5258E77D500C6F9DA /* Cashier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		087CB3E8258E77D500C6F9DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		087CB3ED258E77D500C6F9DA /* Cashier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashier.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		087CB3EF258E77D500C6F9DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		087CB3F0258E77D500C6F9DA /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		0887A35725CD945200D968E5 /* iPad Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPad Icon.png"; sourceTree = "<group>"; };
 		0887A36025CD956400D968E5 /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
 		088AE97925CEEA3900CF5876 /* CardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		089135C626D0590200B21F85 /* CardEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEditView.swift; sourceTree = "<group>"; };
+		08C9463426C825CD008B00CA /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataClass.swift"; sourceTree = "<group>"; };
+		08C9463526C825CD008B00CA /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		08D342F82590F5310042D66B /* Cashier.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cashier.entitlements; sourceTree = "<group>"; };
 		08D342FC2590F5370042D66B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		08D3430B2590F7AE0042D66B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		08F3E16525E4815E002A7868 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		08D42E0626D2D0DC00B84B09 /* ManageTagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTagsView.swift; sourceTree = "<group>"; };
+		08EEBAC626C84816008F0DD0 /* TagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagModel.swift; sourceTree = "<group>"; };
+		08EEBAC826C84A12008F0DD0 /* TagItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItem.swift; sourceTree = "<group>"; };
+		08EEBACA26C84EF9008F0DD0 /* AddTagItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagItem.swift; sourceTree = "<group>"; };
+		08FF53AF26D0320600022982 /* EditExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExpenseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,47 +101,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		087CB3EA258E77D500C6F9DA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				08D3430C2590F7AE0042D66B /* CloudKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		081A31D3258FD9930061EA1E /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				081A31C9258FD9780061EA1E /* TabBar.swift */,
-				081A31CE258FD98E0061EA1E /* SideBar.swift */,
-			);
-			path = Navigation;
-			sourceTree = "<group>";
-		};
 		081D664125938E4F001052AF /* Supporting Views */ = {
 			isa = PBXGroup;
 			children = (
 				081A31E5258FD9EC0061EA1E /* SettingsView.swift */,
-				08F3E16525E4815E002A7868 /* AddItemView.swift */,
-				081D663C25938E0B001052AF /* AllExpensesView.swift */,
-				0854D84125C8535B00C91B22 /* AddExpenseView.swift */,
-				0887A36025CD956400D968E5 /* AddCardView.swift */,
-				080D2FC625D18ACF00F2D6E9 /* CardDetailView.swift */,
+				08D42E0626D2D0DC00B84B09 /* ManageTagsView.swift */,
+				083D30C326D15D4B00E1FC13 /* AppIconView.swift */,
+				081C41B226C6F66E00CBFA7C /* OnBoardingView.swift */,
+				0862130826D2F05100078713 /* TagDetailView.swift */,
 				0854D83625C8527500C91B22 /* Launch Screen.storyboard */,
+				08E5603726D04889006FFA0B /* Expenses */,
+				08E5603826D0489A006FFA0B /* Cards */,
 			);
 			path = "Supporting Views";
+			sourceTree = "<group>";
+		};
+		083D30D126D15E3400E1FC13 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				083D30C526D15DF100E1FC13 /* Blue.png */,
+				083D30C926D15E1000E1FC13 /* White.png */,
+				083D30CD26D15E2B00E1FC13 /* Green.png */,
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 		087CB3D5258E77D400C6F9DA = {
 			isa = PBXGroup;
 			children = (
+				08C9463426C825CD008B00CA /* Expense+CoreDataClass.swift */,
+				08C9463526C825CD008B00CA /* Expense+CoreDataProperties.swift */,
 				08D342F82590F5310042D66B /* Cashier.entitlements */,
 				087CB3DA258E77D400C6F9DA /* Shared */,
 				087CB3E7258E77D500C6F9DA /* iOS */,
-				087CB3EE258E77D500C6F9DA /* macOS */,
 				087CB3E6258E77D500C6F9DA /* Products */,
 				08D342FB2590F5370042D66B /* Frameworks */,
 			);
@@ -153,14 +147,12 @@
 			children = (
 				087CB3DD258E77D400C6F9DA /* CashierApp.swift */,
 				087CB3DE258E77D400C6F9DA /* ContentView.swift */,
-				081A31D6258FD9C70061EA1E /* HomeView.swift */,
-				081A31E0258FD9E40061EA1E /* CardsView.swift */,
-				08784A5F25D1B2BB008EC3C1 /* SearchView.swift */,
+				08C9463626C8267D008B00CA /* Tab Views */,
 				081D664125938E4F001052AF /* Supporting Views */,
 				08FB483625CC507700831828 /* Items */,
-				081A31D3258FD9930061EA1E /* Navigation */,
 				08D343002590F5C30042D66B /* Model */,
 				087CB3E0258E77D500C6F9DA /* Assets.xcassets */,
+				083D30D126D15E3400E1FC13 /* Icons */,
 				0887A35725CD945200D968E5 /* iPad Icon.png */,
 			);
 			path = Shared;
@@ -170,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				087CB3E5258E77D500C6F9DA /* Cashier.app */,
-				087CB3ED258E77D500C6F9DA /* Cashier.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,13 +174,14 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
-		087CB3EE258E77D500C6F9DA /* macOS */ = {
+		08C9463626C8267D008B00CA /* Tab Views */ = {
 			isa = PBXGroup;
 			children = (
-				087CB3EF258E77D500C6F9DA /* Info.plist */,
-				087CB3F0258E77D500C6F9DA /* macOS.entitlements */,
+				081A31D6258FD9C70061EA1E /* HomeView.swift */,
+				081A31E0258FD9E40061EA1E /* CardsView.swift */,
+				08784A5F25D1B2BB008EC3C1 /* SearchView.swift */,
 			);
-			path = macOS;
+			path = "Tab Views";
 			sourceTree = "<group>";
 		};
 		08D342FB2590F5370042D66B /* Frameworks */ = {
@@ -204,20 +196,46 @@
 		08D343002590F5C30042D66B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				081A22CC25D03FA8007D5E75 /* ItemModel.swift */,
+				081A22CC25D03FA8007D5E75 /* ExpenseModel.swift */,
 				088AE97925CEEA3900CF5876 /* CardModel.swift */,
 				087CB3DF258E77D400C6F9DA /* Persistence.swift */,
 				080D2FCD25D192FA00F2D6E9 /* Keyboard.swift */,
+				08EEBAC626C84816008F0DD0 /* TagModel.swift */,
 				087CB3DB258E77D400C6F9DA /* Cashier4.xcdatamodeld */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		08E5603726D04889006FFA0B /* Expenses */ = {
+			isa = PBXGroup;
+			children = (
+				081D663C25938E0B001052AF /* AllExpensesView.swift */,
+				0854D84125C8535B00C91B22 /* AddExpenseView.swift */,
+				087B179D26C9675500C7FBFA /* ExpenseDetailView.swift */,
+				08FF53AF26D0320600022982 /* EditExpenseView.swift */,
+			);
+			path = Expenses;
+			sourceTree = "<group>";
+		};
+		08E5603826D0489A006FFA0B /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				0887A36025CD956400D968E5 /* AddCardView.swift */,
+				080D2FC625D18ACF00F2D6E9 /* CardDetailView.swift */,
+				089135C626D0590200B21F85 /* CardEditView.swift */,
+			);
+			path = Cards;
 			sourceTree = "<group>";
 		};
 		08FB483625CC507700831828 /* Items */ = {
 			isa = PBXGroup;
 			children = (
 				082DDE6625A0F0A300309A53 /* CardItem.swift */,
-				0867D1E625E533930061F0FE /* ItemRow.swift */,
+				081F6A18260157DC000896A6 /* CashCardItem.swift */,
+				0867D1E625E533930061F0FE /* ExpenseRow.swift */,
+				0855C7E626A0AD1F001C06FE /* RoundedRectImageItem.swift */,
+				08EEBAC826C84A12008F0DD0 /* TagItem.swift */,
+				08EEBACA26C84EF9008F0DD0 /* AddTagItem.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -245,23 +263,6 @@
 			productReference = 087CB3E5258E77D500C6F9DA /* Cashier.app */;
 			productType = "com.apple.product-type.application";
 		};
-		087CB3EC258E77D500C6F9DA /* Cashier (macOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 087CB400258E77D500C6F9DA /* Build configuration list for PBXNativeTarget "Cashier (macOS)" */;
-			buildPhases = (
-				087CB3E9258E77D500C6F9DA /* Sources */,
-				087CB3EA258E77D500C6F9DA /* Frameworks */,
-				087CB3EB258E77D500C6F9DA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Cashier (macOS)";
-			productName = "Cashier (macOS)";
-			productReference = 087CB3ED258E77D500C6F9DA /* Cashier.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -272,9 +273,6 @@
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
 					087CB3E4258E77D500C6F9DA = {
-						CreatedOnToolsVersion = 12.3;
-					};
-					087CB3EC258E77D500C6F9DA = {
 						CreatedOnToolsVersion = 12.3;
 					};
 				};
@@ -296,7 +294,6 @@
 			projectRoot = "";
 			targets = (
 				087CB3E4258E77D500C6F9DA /* Cashier (iOS) */,
-				087CB3EC258E77D500C6F9DA /* Cashier (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -307,18 +304,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0887A35825CD945200D968E5 /* iPad Icon.png in Resources */,
+				083D30CB26D15E1100E1FC13 /* White.png in Resources */,
 				0854D83725C8527500C91B22 /* Launch Screen.storyboard in Resources */,
+				083D30CF26D15E2B00E1FC13 /* Green.png in Resources */,
 				087CB3F9258E77D500C6F9DA /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		087CB3EB258E77D500C6F9DA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0887A35925CD945200D968E5 /* iPad Icon.png in Resources */,
-				0854D83825C8527500C91B22 /* Launch Screen.storyboard in Resources */,
-				087CB3FA258E77D500C6F9DA /* Assets.xcassets in Resources */,
+				083D30C626D15DF100E1FC13 /* Blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,53 +319,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				087B179E26C9675500C7FBFA /* ExpenseDetailView.swift in Sources */,
 				087CB3F1258E77D500C6F9DA /* Cashier4.xcdatamodeld in Sources */,
 				082DDE6725A0F0A300309A53 /* CardItem.swift in Sources */,
+				081C41B326C6F66E00CBFA7C /* OnBoardingView.swift in Sources */,
 				087CB3F7258E77D500C6F9DA /* Persistence.swift in Sources */,
-				081A22CD25D03FA8007D5E75 /* ItemModel.swift in Sources */,
+				081A22CD25D03FA8007D5E75 /* ExpenseModel.swift in Sources */,
 				0854D84225C8535B00C91B22 /* AddExpenseView.swift in Sources */,
+				0862130926D2F05100078713 /* TagDetailView.swift in Sources */,
 				081A31E1258FD9E40061EA1E /* CardsView.swift in Sources */,
+				08EEBACB26C84EF9008F0DD0 /* AddTagItem.swift in Sources */,
+				08EEBAC926C84A12008F0DD0 /* TagItem.swift in Sources */,
 				081D663D25938E0B001052AF /* AllExpensesView.swift in Sources */,
-				0867D1E725E533940061F0FE /* ItemRow.swift in Sources */,
+				08FF53B026D0320700022982 /* EditExpenseView.swift in Sources */,
+				0867D1E725E533940061F0FE /* ExpenseRow.swift in Sources */,
 				080D2FC725D18ACF00F2D6E9 /* CardDetailView.swift in Sources */,
 				0887A36125CD956400D968E5 /* AddCardView.swift in Sources */,
-				08F3E16625E4815E002A7868 /* AddItemView.swift in Sources */,
 				087CB3F3258E77D500C6F9DA /* CashierApp.swift in Sources */,
 				08784A6025D1B2BB008EC3C1 /* SearchView.swift in Sources */,
 				081A31E6258FD9EC0061EA1E /* SettingsView.swift in Sources */,
 				081A31D7258FD9C70061EA1E /* HomeView.swift in Sources */,
+				08EEBAC726C84816008F0DD0 /* TagModel.swift in Sources */,
+				089135C726D0590200B21F85 /* CardEditView.swift in Sources */,
+				081F6A19260157DC000896A6 /* CashCardItem.swift in Sources */,
+				08D42E0726D2D0DC00B84B09 /* ManageTagsView.swift in Sources */,
 				087CB3F5258E77D500C6F9DA /* ContentView.swift in Sources */,
+				0855C7E726A0AD1F001C06FE /* RoundedRectImageItem.swift in Sources */,
 				080D2FCE25D192FA00F2D6E9 /* Keyboard.swift in Sources */,
-				081A31CF258FD98E0061EA1E /* SideBar.swift in Sources */,
-				081A31CA258FD9780061EA1E /* TabBar.swift in Sources */,
 				088AE97A25CEEA3900CF5876 /* CardModel.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		087CB3E9258E77D500C6F9DA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				087CB3F2258E77D500C6F9DA /* Cashier4.xcdatamodeld in Sources */,
-				082DDE6825A0F0A300309A53 /* CardItem.swift in Sources */,
-				087CB3F8258E77D500C6F9DA /* Persistence.swift in Sources */,
-				081A22CE25D03FA8007D5E75 /* ItemModel.swift in Sources */,
-				0854D84325C8535B00C91B22 /* AddExpenseView.swift in Sources */,
-				081A31E2258FD9E40061EA1E /* CardsView.swift in Sources */,
-				081D663E25938E0B001052AF /* AllExpensesView.swift in Sources */,
-				0867D1E825E533940061F0FE /* ItemRow.swift in Sources */,
-				080D2FC825D18ACF00F2D6E9 /* CardDetailView.swift in Sources */,
-				0887A36225CD956400D968E5 /* AddCardView.swift in Sources */,
-				08F3E16725E4815E002A7868 /* AddItemView.swift in Sources */,
-				087CB3F4258E77D500C6F9DA /* CashierApp.swift in Sources */,
-				08784A6125D1B2BB008EC3C1 /* SearchView.swift in Sources */,
-				081A31E7258FD9EC0061EA1E /* SettingsView.swift in Sources */,
-				081A31D8258FD9C70061EA1E /* HomeView.swift in Sources */,
-				087CB3F6258E77D500C6F9DA /* ContentView.swift in Sources */,
-				080D2FCF25D192FA00F2D6E9 /* Keyboard.swift in Sources */,
-				081A31D0258FD98E0061EA1E /* SideBar.swift in Sources */,
-				081A31CB258FD9780061EA1E /* TabBar.swift in Sources */,
-				088AE97B25CEEA3900CF5876 /* CardModel.swift in Sources */,
+				083D30C426D15D4B00E1FC13 /* AppIconView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +405,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -486,6 +459,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -498,6 +472,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Cashier.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -523,6 +498,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Cashier.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -544,58 +520,6 @@
 			};
 			name = Release;
 		};
-		087CB401258E77D500C6F9DA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = macOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "piltch.trevor.CloudKit-Test";
-				PRODUCT_NAME = Cashier;
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		087CB402258E77D500C6F9DA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = macOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "piltch.trevor.CloudKit-Test";
-				PRODUCT_NAME = Cashier;
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -613,15 +537,6 @@
 			buildConfigurations = (
 				087CB3FE258E77D500C6F9DA /* Debug */,
 				087CB3FF258E77D500C6F9DA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		087CB400258E77D500C6F9DA /* Build configuration list for PBXNativeTarget "Cashier (macOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				087CB401258E77D500C6F9DA /* Debug */,
-				087CB402258E77D500C6F9DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

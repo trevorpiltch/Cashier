@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CardsView: View {
     @ObservedObject var cardModel: CardModel
+    @ObservedObject var expenseModel: ExpenseModel
     @Binding var showCardDetail: Bool
     @Binding var index: Int
     
@@ -17,7 +18,7 @@ struct CardsView: View {
     var namespace: Namespace.ID
     
     var body: some View {
-        NavigationView {
+        ZStack {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 20) {
                     if (cardModel.data.count == 0) {
@@ -47,9 +48,11 @@ struct CardsView: View {
                                         Button(action: {
                                             showAddCard = true
                                         }) {
-                                            Image(systemName: "plus.circle")
+                                            Image(systemName: "plus.circle.fill")
                                         })
             }
+            
+           
         }
     }
 }
@@ -58,7 +61,7 @@ struct CardsView_Previews: PreviewProvider {
     @Namespace static var namespace
     
     static var previews: some View {
-        CardsView(cardModel: CardModel(), showCardDetail: .constant(false), index: .constant(0), showAddCard: false, namespace: namespace)
+        CardsView(cardModel: CardModel(), expenseModel: ExpenseModel(), showCardDetail: .constant(false), index: .constant(0), showAddCard: false, namespace: namespace)
         
     }
 }

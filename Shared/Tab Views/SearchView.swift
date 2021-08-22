@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct SearchView: View {
+    @ObservedObject var expenseModel: ExpenseModel
+    @ObservedObject var cardModel: CardModel
+    @ObservedObject var tagModel: TagModel
+    
     // Search string to use in the search bar
     @State var searchString = ""
+    @State var tags: [String]? = nil
     
     // Search action. Called when search key pressed on keyboard
     func search() {
@@ -17,6 +22,7 @@ struct SearchView: View {
     
     // Cancel action. Called when cancel button of search bar pressed
     func cancel() {
+        searchString = ""
     }
     
     // View body
@@ -24,8 +30,41 @@ struct SearchView: View {
         // Search Navigation. Can be used like a normal SwiftUI NavigationView.
         SearchNavigation(text: $searchString, search: search, cancel: cancel) {
             // Example SwiftUI View
-            Text("Data here")
-            .navigationBarTitle("Search")
+            VStack {
+//                ScrollView(.horizontal, showsIndicators: false) {
+//                    HStack {
+//                        ForEach(tagModel.data, id: \.self) { data in
+//
+//                            Button(action: {
+//                                searchString = tagModel.getValue(obj: data).name
+//                                print("Tapped")
+//                            }) {
+//                            TagItem(tagModel: tagModel.getValue(obj: data), isSelected: true, tags: $tags)
+//                            }
+//                        }
+//                    }
+//                    .padding()
+//                }
+                
+                ScrollView(.vertical, showsIndicators: false) {
+                    ForEach(expenseModel.data.filter {
+                        if searchString != "" {
+                            return expenseModel.getValue(obj: $0).item.lowercased().contains(searchString.lowercased()) || "\(expenseModel.getValue(obj: $0).amount)".contains(searchString)
+                        }
+                        else {
+                            return true
+                        }
+                    }, id: \.self) { data in
+                        NavigationLink(destination: ExpenseDetailView(expenseModel: expenseModel.getValue(obj: data), masterExpenseModel: expenseModel, cardModel: cardModel, selectedObject: data)) {
+                            ExpenseRow(expenseModel: expenseModel.getValue(obj: data))
+                        }
+                    }
+                    
+                    
+                    Spacer()
+                }
+                .navigationTitle("Search")
+            }
         }
         .edgesIgnoringSafeArea(.top)
     }
@@ -33,7 +72,7 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        SearchView(expenseModel: ExpenseModel(), cardModel: CardModel(), tagModel: TagModel())
     }
 }
 

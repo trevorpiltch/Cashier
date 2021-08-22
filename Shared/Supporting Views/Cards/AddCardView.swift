@@ -93,6 +93,7 @@ struct AddCardView: View {
                         .font(.system(size: 24))
                 }
             }
+            .listStyle(InsetGroupedListStyle())
             .navigationTitle("Add Card")
             .navigationBarItems(leading: Button(action: {
                 self.presentationMode.wrappedValue.dismiss()

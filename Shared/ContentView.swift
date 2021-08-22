@@ -9,24 +9,50 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    #if os(iOS)
-    @Environment(\.horizontalSizeClass) var horizontalSizeClass
-    #endif
-   
-    @ObservedObject var expenseModel: ItemModel
+    @ObservedObject var expenseModel: ExpenseModel
     @ObservedObject var cardModel: CardModel
+    @ObservedObject var tagModel: TagModel
+    
+    @State var showCardDetail = false
+    @State var index = 0
+    
+    @Namespace var namespace
     
     var body: some View {
-        #if os(iOS)
-        if horizontalSizeClass == .compact {
-            TabBar(expenseModel: ItemModel(), cardModel: cardModel)
+        ZStack {
+            
+            TabView {
+                NavigationView {
+                    HomeView(expenseModel: expenseModel, cardModel: cardModel, tagModel: tagModel)
+                           
+                        .navigationTitle("Home")
+                }
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Home")
+            }
+                
+                NavigationView {
+                    CardsView(cardModel: cardModel, expenseModel: expenseModel, showCardDetail: $showCardDetail, index: $index, namespace: namespace)
+                       
+                    .navigationTitle("Cards")
+                }
+                .tabItem {
+                    Image(systemName: "creditcard.fill")
+                    Text("Cards")
+                }
+                
+                SearchView(expenseModel: expenseModel, cardModel: cardModel, tagModel: tagModel)
+                    .tabItem {
+                        Image(systemName: "magnifyingglass")
+                        Text("Search")
+                    }
+                
+            }
+            if showCardDetail {
+                CardDetailView(namespace: namespace, cardModel: cardModel, expenseModel: expenseModel, index: $index, showCardDetail: $showCardDetail)
+            }
         }
-        else {
-            SideBar()
-        }
-        #else
-        SideBar()
-        #endif
     }
 }
 
@@ -39,6 +65,6 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(expenseModel: ItemModel(), cardModel: CardModel())
+        ContentView(expenseModel: ExpenseModel(), cardModel: CardModel(), tagModel: TagModel())
     }
 }

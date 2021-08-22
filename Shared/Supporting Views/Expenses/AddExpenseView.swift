@@ -94,6 +94,7 @@ struct AddExpenseView: View {
                         }
                     }
                 }
+                .listStyle(InsetGroupedListStyle())
             }
             .navigationTitle("Add Expense")
             .navigationBarItems(leading: Button(action: {

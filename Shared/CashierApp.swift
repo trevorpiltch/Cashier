@@ -9,28 +9,38 @@ import SwiftUI
 
 @main
 struct CashierApp: App {
-     //For changing the navigation bar appearence
-    init() {
-//        let navigationBarAppearance = UINavigationBarAppearance()
-//
-//        navigationBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(Color.accentColor)]
-//        navigationBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(Color.accentColor)]
-//
-//        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
-//        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
-//        UINavigationBar.appearance().compactAppearance = navigationBarAppearance
-        dateFormatter.dateFormat = "MM/dd/YYYY"
-    }
+    @AppStorage("hasOpened") var hasOpened = false
 
     @StateObject var cardModel = CardModel()
-    @StateObject var expenseModel = ItemModel()
+    @StateObject var expenseModel = ExpenseModel()
+    @StateObject var tagModel = TagModel()
 
     var body: some Scene {
         WindowGroup {
-            ContentView(expenseModel: ItemModel(), cardModel: cardModel)
+            if hasOpened {
+                ContentView(expenseModel: ExpenseModel(), cardModel: cardModel, tagModel: tagModel)
+            }
+            else {
+                OnBoardingView()
+                    .onAppear {
+                        cardModel.company = "Cash"
+                        cardModel.writeData()
+                        cardModel.resetData()
+                    }
+            }
         }
+        
     }
 }
+
+// Date formatter
+let dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "MM/dd/YYYY"
+    return formatter
+}()
+
+let screen = UIScreen.main.bounds
 
 let gradients: [LinearGradient] = [
     LinearGradient(gradient: Gradient(colors: [Color("Blue1"), Color("Purple1")]), startPoint: .leading, endPoint: .topTrailing),
@@ -40,8 +50,6 @@ let gradients: [LinearGradient] = [
     LinearGradient(gradient: Gradient(colors: [Color("Green3"), Color("Yellow2")]), startPoint: .leading, endPoint: .topTrailing),
 ]
 
-let screen = UIScreen.main.bounds
-
 let gradientColors: [Color] = [
     Color("Blue1"),
     Color("Green1"),
@@ -49,7 +57,6 @@ let gradientColors: [Color] = [
     Color("Orange1"),
     Color("Green3")
 ]
-
 
 extension Binding {
     func onChange(_ handler: @escaping (Value) -> Void) -> Binding<Value> {

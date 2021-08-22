@@ -10,30 +10,32 @@ import SwiftUI
 struct ExpenseRow: View {
     @ObservedObject var expenseModel: ExpenseModel
 
-    var index: Int
-
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("$\(expenseModel.getValue(obj: expenseModel.data[index]).amount, specifier: "%.2f") - \(expenseModel.getValue(obj: expenseModel.data[index]).item)")
-                .font(.title3)
-                .foregroundColor(expenseModel.getValue(obj: expenseModel.data[index]).type.lowercased() == "expense" ? Color.red : Color.green)
+        HStack {
+            RoundedRectImageItem(imageName: "cart.circle.fill", color: .accentColor, size: 36)
             
-            Text("\(dateFormatter.string(from: expenseModel.getValue(obj: expenseModel.data[index]).date))")
-                .opacity(0.7)
+            VStack(alignment: .leading) {
+                Text("$\(expenseModel.amount, specifier: "%.2f") - \(expenseModel.item)")
+                    .font(.title3)
+                    .bold()
+                    
+                
+                Text("\(dateFormatter.string(from: expenseModel.date))")
+                    .opacity(0.7)
+            }
+            .foregroundColor(Color("Text"))
             
-            Divider()
+            Spacer()
+            
+            Image(systemName: "chevron.right")
+                .foregroundColor(Color.black.opacity(0.7))
         }
-        
         .padding(.horizontal)
-        .padding(.vertical, 5)
-        .onAppear {
-            dateFormatter.dateFormat = "MM/dd/YYYY"
-        }
     }
 }
 
 struct ItemRow_Previews: PreviewProvider {
     static var previews: some View {
-        ExpenseRow(expenseModel: ExpenseModel(date: Date(), item: "Test", amount: 10.0, selectedCard: "", tags: [""], type: "expense"), index: 0)
+        ExpenseRow(expenseModel: ExpenseModel(date: Date(), item: "Test", amount: 10.0, selectedCard: "", tags: [""], type: "expense", id: UUID()))
     }
 }

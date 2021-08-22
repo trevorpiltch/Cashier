@@ -15,12 +15,12 @@ class CardModel: ObservableObject {
     @Published var data: [NSManagedObject] = []
     
     // Model variables
-    @Published var company = "norway"
-    @Published var number = "0000-0000-0000"
+    @Published var company = ""
+    @Published var number = ""
     @Published var gradient = 0
-    @Published var name = "trevor"
+    @Published var name = ""
     @Published var id = UUID()
-
+    @Published var selectedObject: [NSManagedObject] = []
     
     init() {
         // Read the data when initialized
@@ -47,6 +47,8 @@ class CardModel: ObservableObject {
         catch {
             print(error.localizedDescription)
         }
+        
+        
     }
     
     // Creating a new card
@@ -72,13 +74,14 @@ class CardModel: ObservableObject {
     // Deleting a card from core data
     func deleteData(id: UUID) {
         readData()
-        
+
         for card in data {
+            
             if getValue(obj: card).id == id {
                 do {
                     let index = data.firstIndex(of: card)!
                     data.remove(at: index)
-                    
+
                     context.delete(card)
                     try context.save()
                 }
@@ -87,7 +90,36 @@ class CardModel: ObservableObject {
                 }
             }
         }
-        readData()
+//        readData()
+    }
+    
+    func updateData() {
+        let index = data.firstIndex(of: selectedObject[0])!
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CreditCard")
+        
+        do {
+            let results = try context.fetch(request) as! [NSManagedObject]
+            
+            let obj = results.first { (obj) -> Bool in
+                if obj == selectedObject[0] {
+                    return true
+                }
+                else {
+                    return false
+                }
+            }
+            
+            obj?.setValue(company, forKey: "company")
+            obj?.setValue(gradient, forKey: "gradient")
+            obj?.setValue(name, forKey: "name")
+            obj?.setValue(number, forKey: "number")
+            
+            try context.save()
+            data[index] = obj!
+        }
+        catch {
+            print(error.localizedDescription)
+        }
     }
     
     func resetData() {

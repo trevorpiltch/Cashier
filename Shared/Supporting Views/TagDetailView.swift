@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct TagDetailView: View {
+    @ObservedObject var expenseModel: ExpenseModel
+    @ObservedObject var cardModel: CardModel
+    @ObservedObject var tagModel: TagModel
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                Text("Hi")
+            }
+            .navigationTitle(tagModel.name)
+        }
     }
 }
 
 struct TagDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        TagDetailView()
+        TagDetailView(expenseModel: ExpenseModel(), cardModel: CardModel(), tagModel: TagModel())
     }
 }

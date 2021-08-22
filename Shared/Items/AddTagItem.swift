@@ -8,13 +8,39 @@
 import SwiftUI
 
 struct AddTagItem: View {
+    @ObservedObject var tagModel: TagModel
+    @State var name = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Rectangle()
+                .frame(width: 103, height: 47)
+                .background(Color.accentColor)
+                .foregroundColor(.accentColor)
+                .cornerRadius(11)
+            
+            HStack {
+                Image(systemName: "plus")
+                
+                TextField("Add Tag", text: $name, onCommit: {
+                    tagModel.name = name
+                    tagModel.id = UUID()
+                    tagModel.writeData()
+                    name = ""
+                })
+            }
+            .padding(5)
+            .foregroundColor(Color.black.opacity(0.8))
+            .frame(width: 100, height: 44)
+            .background(Color.white)
+            .cornerRadius(9)
+        }
+
     }
 }
 
 struct AddTagItem_Previews: PreviewProvider {
     static var previews: some View {
-        AddTagItem()
+        AddTagItem(tagModel: TagModel(name: "Add Tag", id: UUID()))
     }
 }

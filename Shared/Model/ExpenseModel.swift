@@ -35,7 +35,7 @@ class ExpenseModel: ObservableObject, Identifiable {
     @Published var amount: Double = 0.00
     @Published var selectedCard: String = ""
     @Published var id: UUID = UUID()
-//    @Published var tags: [String] = [""]
+    @Published var tags: [String] = []
     @Published var type: String = ""
     @Published var selectedObj: [NSManagedObject] = []
     
@@ -53,18 +53,19 @@ class ExpenseModel: ObservableObject, Identifiable {
     }
     
     // An initializer with all the variables needed
-    init(date: Date, item: String, amount: Double, selectedCard: String, tags: [String], type: String) {
+    init(date: Date, item: String, amount: Double, selectedCard: String, tags: [String], type: String, id: UUID) {
         self.date = date
         self.item = item
         self.amount = amount
         self.selectedCard = selectedCard
-//        self.tags = tags
+        self.tags = tags
         self.type = type
+        self.id = id
     }
     
     // Read the data from core data
     func readData() {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Expense")
         
         do {
             let results = try context.fetch(request)
@@ -83,14 +84,18 @@ class ExpenseModel: ObservableObject, Identifiable {
     
     // Create a new expense
     func writeData() {
-        let entity = NSEntityDescription.insertNewObject(forEntityName: "Item", into: context)
+        let entity = NSEntityDescription.insertNewObject(forEntityName: "Expense", into: context)
+        
+        for i in tags {
+            print("Tag: \(i)")
+        }
                 
         entity.setValue(date, forKey: "date")
         entity.setValue(item, forKey: "item")
         entity.setValue(amount, forKey: "amount")
         entity.setValue(selectedCard, forKey: "selectedCard")
         entity.setValue(id, forKey: "id")
-//        entity.setValue(tags, forKey: "tags")
+        entity.setValue(tags as [NSString], forKey: "tags")
         entity.setValue(type, forKey: "type")
         
         do {
@@ -113,9 +118,9 @@ class ExpenseModel: ObservableObject, Identifiable {
     
     // Update the data (changes in expense detail view
     func updateData() {
-        let index = data.firstIndex(of: selectedObj[0])
+        let index = data.firstIndex(of: selectedObj[0])!
         
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Expense")
         
         do {
             let results = try context.fetch(request) as! [NSManagedObject]
@@ -134,12 +139,12 @@ class ExpenseModel: ObservableObject, Identifiable {
             obj?.setValue(amount, forKey: "amount")
             obj?.setValue(selectedCard, forKey: "selectedCard")
             obj?.setValue(id, forKey: "id")
-//            obj?.setValue(tags, forKey: "tags")
+            obj?.setValue(tags, forKey: "tags")
             obj?.setValue(type, forKey: "type")
             
             try context.save()
             
-            data[index!] = obj!
+            data[index] = obj!
             
         }
         catch {
@@ -150,15 +155,22 @@ class ExpenseModel: ObservableObject, Identifiable {
     }
     
     // Delete an expense
-    func deleteData(index: Int) {
+    func deleteData(id: UUID) {
+        print("Delete Called")
+        print("ID: \(id)")
         readData()
         
-        for i in data.indices {
-            if i == index {
+        for expense in data {
+            print("Loop Called")
+            print("ID: \(getValue(obj: expense).id)")
+            print("\(getValue(obj: expense).item): \(getValue(obj: expense).amount)")
+
+            if getValue(obj: expense).id == id {
+                print("Match found")
                 do {
-                    let expense = data[i]
-                    data.remove(at: i)
-                    
+                    let index = data.firstIndex(of: expense)!
+                    data.remove(at: index)
+
                     context.delete(expense)
                     try context.save()
                     print("Deleting Expense")
@@ -169,15 +181,34 @@ class ExpenseModel: ObservableObject, Identifiable {
                 }
             }
         }
-        
+
         readData()
         objectWillChange.send()
         sortData()
     }
     
-    // Convert from manageed object to expense
+    // Convert from managed object to expense
     func getValue(obj: NSManagedObject) -> ExpenseModel {
-        return ExpenseModel(date: obj.value(forKey: "date") as? Date ?? Date(), item: obj.value(forKey: "item") as? String ?? "Example", amount: obj.value(forKey: "amount") as? Double ?? 0.00, selectedCard: obj.value(forKey: "id") as? String ?? "", tags: [""], type: obj.value(forKey: "type") as? String ?? "Expense")
+        let date = obj.value(forKey: "date") as? Date ?? Date()
+        let item = obj.value(forKey: "item") as? String ?? "Example"
+        let amount = obj.value(forKey: "amount") as? Double ?? 0.00
+        let selectedCard = obj.value(forKey: "selectedCard") as? String ?? ""
+        let tags: [String] = {
+            let tagModel = TagModel()
+            let coreDataTags = obj.value(forKey: "tags") as? [String] ?? [""]
+            var expenseTags: [String] = []
+            
+            
+            for tag in tagModel.data {
+                if coreDataTags.contains(tagModel.getValue(obj: tag).name) {
+                    expenseTags.append(tagModel.getValue(obj: tag).name)
+                }
+            }
+            
+            return expenseTags
+        }()
+        
+        return ExpenseModel(date: date, item: item, amount: amount, selectedCard: selectedCard, tags: tags, type: obj.value(forKey: "type") as? String ?? "Expense", id: obj.value(forKey: "id") as? UUID ?? UUID())
     }
     
     // Calculate the total for all the expenses
@@ -255,6 +286,5 @@ class ExpenseModel: ObservableObject, Identifiable {
     }
 }
 
-// Date formatter
-let dateFormatter: DateFormatter = DateFormatter()
+
 

@@ -22,6 +22,6 @@ extension Expense {
     @NSManaged public var item: String?
     @NSManaged public var selectedCard: String?
     @NSManaged public var type: String?
-    @NSManaged public var tags: NSObject?
+    @NSManaged public var tags: [NSString]?
 
 }

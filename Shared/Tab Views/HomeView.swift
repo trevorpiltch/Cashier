@@ -9,8 +9,9 @@ import SwiftUI
 import SwiftUICharts
 
 struct HomeView: View {
-    @ObservedObject var itemModel: ExpenseModel
+    @ObservedObject var expenseModel: ExpenseModel
     @ObservedObject var cardModel: CardModel
+    @ObservedObject var tagModel: TagModel
     
     let dateFormatter = DateFormatter()
     
@@ -24,7 +25,7 @@ struct HomeView: View {
     @State var graphData: [(String, Double)] = []
     
     var body: some View {
-        NavigationView {
+//        VStack {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 16) {
                     Picker(selection: $selectedTime, label: Text("Time")) {
@@ -34,33 +35,28 @@ struct HomeView: View {
                         Text("All").tag("All")
                     }
                     .onChange(of: selectedTime) { time in
-                        itemModel.time = selectedTime
-                        itemModel.sortData()
+                        expenseModel.time = selectedTime
+                        expenseModel.sortData()
                         updateGraph()
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     
-                    Text("$\(itemModel.calculateTotal(), specifier: "%.2f")")
+                    Text("$\(expenseModel.calculateTotal(), specifier: "%.2f")")
                         .font(.title)
                     
                     graph
-                        .frame(width: screen.width - 32, height: screen.height / 3)
-                        .background(Color("OffGray"))
-                        .cornerRadius(20)
+                        
 
                    recents
                     
                     cards
-                    .padding(.vertical)
-                    .frame(width: screen.width - 32, height: cardModel.data.count == 0 ? 150 : 300)
-                    .background(Color("OffGray"))
-                    .cornerRadius(20)
-                    .animation(.spring())
+                   
+                    
+                    tags
                 }
                 .padding(.horizontal, 16)
             }
             
-            .navigationTitle("Home")
             .navigationBarItems(leading:
                                     Button(action: {
                                         showSettings = true
@@ -68,7 +64,7 @@ struct HomeView: View {
                                         Image(systemName: "person.circle.fill")
                                     }
                 .sheet(isPresented: $showSettings) {
-                    SettingsView(itemModel: itemModel)
+                SettingsView(itemModel: expenseModel, tagModel: tagModel)
                 }
                                 ,
                                 trailing:
@@ -86,12 +82,11 @@ struct HomeView: View {
                 chartStyle.darkModeStyle = darkChartStyle
             }
             .sheet(isPresented: $showAddExpense) {
-                AddExpenseView(itemModel: itemModel, cardModel: cardModel)
+                AddExpenseView(itemModel: expenseModel, cardModel: cardModel, tagModel: tagModel)
             }
-            .onReceive(itemModel.objectWillChange) {
+            .onReceive(expenseModel.objectWillChange) {
                 updateGraph()
             }
-        }
     }
     
     var graph: some View {
@@ -101,8 +96,8 @@ struct HomeView: View {
                     .frame(width: 32, height: 32)
                     .foregroundColor(.white)
                     .padding(9)
-                    .background(Color.orange)
-                    .clipShape(Circle())
+                    .background(Color.purple)
+                    .clipShape(RoundedRectangle(cornerRadius: 11, style: .continuous))
                 
                 Text("Graph")
                 
@@ -113,6 +108,9 @@ struct HomeView: View {
             
             BarChartView(data: ChartData(values: graphData), title: "", style: chartStyle, form: CGSize(width: screen.width - 44, height: screen.height / 4), dropShadow: false, cornerImage: Image(systemName: ""), valueSpecifier: "%.2f")
         }
+        .frame(width: screen.width - 32, height: screen.height / 3)
+        .background(Color("OffGray"))
+        .cornerRadius(20)
     }
     
     var recents: some View {
@@ -124,38 +122,42 @@ struct HomeView: View {
                     .foregroundColor(.white)
                     .padding(9)
                     .background(Color.red)
-                    .clipShape(Circle())
+                    .clipShape(RoundedRectangle(cornerRadius: 11, style: .continuous))
                     .padding(.leading)
                 
                 Text("Recents")
                 
                 Spacer()
-                
-                NavigationLink(destination: AllExpensesView()) {
-                    Text("See All")
-                        .font(.body)
-                }
-                .padding(.horizontal)
             }
             .font(.title)
             
-            if itemModel.data.count == 0 {
+            if expenseModel.data.count == 0 {
                 Text("Add Something To Begin")
                     .padding(.horizontal, 20)
                     .padding(.top, 10)
             }
             else if !showMoreRecents {
-                ItemRow(itemModel: itemModel, index: 0)
+                NavigationLink(destination: ExpenseDetailView(expenseModel: expenseModel.getValue(obj: expenseModel.data[0]), masterExpenseModel: expenseModel, cardModel: cardModel, selectedObject: expenseModel.data[0])) {
+                    ExpenseRow(expenseModel: expenseModel.getValue(obj: expenseModel.data[0]))
+                }
             }
             else {
-                if (itemModel.data.count < 5 && itemModel.data.count > 0) {
-                    ForEach(itemModel.data.indices, id: \.self) { i in
-                        ItemRow(itemModel: itemModel, index: i)
+                if (expenseModel.data.count < 5 && expenseModel.data.count > 0) {
+                    ForEach(expenseModel.data.indices, id: \.self) { index in
+                        NavigationLink(destination: ExpenseDetailView(expenseModel: expenseModel.getValue(obj: expenseModel.data[index]), masterExpenseModel: expenseModel, cardModel: cardModel, selectedObject: expenseModel.data[0])) {
+                            ExpenseRow(expenseModel: expenseModel.getValue(obj: expenseModel.data[index]))
+                        }
+                        
+                        Divider()
                     }
                 }
                 else {
-                    ForEach(0..<5) { i in
-                        ItemRow(itemModel: itemModel, index: i)
+                    ForEach(0..<5) { index in
+                        NavigationLink(destination: ExpenseDetailView(expenseModel: expenseModel.getValue(obj: expenseModel.data[index]), masterExpenseModel: expenseModel, cardModel: cardModel, selectedObject: expenseModel.data[0])) {
+                            ExpenseRow(expenseModel: expenseModel.getValue(obj: expenseModel.data[index]))
+                        }
+                        
+                        Divider()
                     }
                 }
             }
@@ -163,24 +165,26 @@ struct HomeView: View {
             Spacer()
         }
         .padding(.vertical)
-        .frame(width: screen.width - 32, height: showMoreRecents ? 500 : 150)
+        .frame(width: screen.width - 32, height: showMoreRecents ? expenseModel.data.count < 5 ? CGFloat(expenseModel.data.count * 100) : 450  : 150)
         .background(Color("OffGray"))
         .cornerRadius(20)
         .animation(.spring())
         .onTapGesture {
-            showMoreRecents.toggle()
+            if expenseModel.data.count > 1 {
+                showMoreRecents.toggle()
+            }
         }
     }
     
     var cards: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image(systemName: "creditcard")
+                Image(systemName: "creditcard.fill")
                     .frame(width: 32, height: 32)
                     .foregroundColor(.white)
                     .padding(9)
                     .background(Color.blue)
-                    .clipShape(Circle())
+                    .clipShape(RoundedRectangle(cornerRadius: 11, style: .continuous))
                     .padding(.leading)
                 
                 
@@ -208,21 +212,64 @@ struct HomeView: View {
             
             Spacer()
         }
+        .padding(.vertical)
+        .frame(width: screen.width - 32, height: cardModel.data.count == 0 ? 150 : 300)
+        .background(Color("OffGray"))
+        .cornerRadius(20)
+        .animation(.spring())
+    }
+    
+    var tags: some View {
+        VStack {
+            HStack {
+                Image(systemName: "tag.fill")
+                    .frame(width: 32, height: 32)
+                    .foregroundColor(.white)
+                    .padding(9)
+                    .background(Color.orange)
+                    .clipShape(RoundedRectangle(cornerRadius: 11, style: .continuous))
+                    .padding(.leading)
+                
+                Text("Tags")
+                
+                Spacer()
+            }
+            .font(.title)
+            
+            Spacer()
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(alignment: .top, spacing: 10) {
+                    ForEach(tagModel.data, id: \.self) { data in
+                        NavigationLink(destination: TagDetailView(expenseModel: expenseModel, cardModel: cardModel, tagModel: tagModel)) {
+                            TagItem(tagModel: tagModel.getValue(obj: data), isSelected: true, tags: .constant(nil))
+                        }
+                    }
+                }
+            }
+            .padding(.horizontal)
+        }
+        .padding(.vertical)
+        .frame(width: screen.width - 32, height: 150)
+        .background(Color("OffGray"))
+        .cornerRadius(20)
+        .animation(.spring())
+        .padding(.bottom)
     }
     
     // Update the graph based on the time sortby
     func updateGraph() {
         graphData.removeAll()
         dateFormatter.dateFormat = "MM/dd/yy"
-        let filteredData = itemModel.timeSortedData.filter {
-            itemModel.getValue(obj: $0).type == selectedType
+        let filteredData = expenseModel.timeSortedData.filter {
+            expenseModel.getValue(obj: $0).type == selectedType
         }
         var amounts: [(String, Double)] = []
         
         for i in filteredData.indices {
-            let currentDateFormatted = dateFormatter.string(from: itemModel.getValue(obj: filteredData[i]).date)
+            let currentDateFormatted = dateFormatter.string(from: expenseModel.getValue(obj: filteredData[i]).date)
             
-            amounts.append((currentDateFormatted, (itemModel.getValue(obj: filteredData[i]).amount)))
+            amounts.append((currentDateFormatted, (expenseModel.getValue(obj: filteredData[i]).amount)))
             
             var deletedAmount = 0
 
@@ -235,11 +282,12 @@ struct HomeView: View {
             }
         }
         graphData = amounts
-    }}
+    }
+}
 
 struct DashboardView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(itemModel: ExpenseModel(), cardModel: CardModel(company: "Norway", number: "0000-0000", gradient: 0, name: "", id: UUID()))
+        HomeView(expenseModel: ExpenseModel(), cardModel: CardModel(company: "Norway", number: "0000-0000", gradient: 0, name: "", id: UUID()), tagModel: TagModel())
     }
 }
 

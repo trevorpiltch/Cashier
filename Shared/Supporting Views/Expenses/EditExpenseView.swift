@@ -91,6 +91,7 @@ struct EditExpenseView: View {
                     }
                 }
             }
+            .listStyle(InsetGroupedListStyle())
             .navigationTitle(item)
             .navigationBarItems(leading: Button(action: {
                 presentationMode.wrappedValue.dismiss()

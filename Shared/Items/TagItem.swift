@@ -8,13 +8,36 @@
 import SwiftUI
 
 struct TagItem: View {
+    @ObservedObject var tagModel: TagModel
+    
+    @State var isSelected: Bool = false
+    @Binding var tags: [String]?
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(tagModel.name)
+        }
+        .foregroundColor(isSelected ? Color.white : Color.black.opacity(0.6))
+        .frame(width: CGFloat(tagModel.name.count * 10 + 10), height: 44)
+        .background(isSelected ? Color.accentColor : Color.black.opacity(0.2))
+        .cornerRadius(11)
+        .onTapGesture {
+            if tags != nil {
+                if isSelected && !tags!.isEmpty {
+                    let index = tags!.firstIndex(of: tagModel.name)!
+                    tags!.remove(at: index)
+                }
+                else {
+                    tags!.append(tagModel.name)
+                }
+                isSelected.toggle()
+            }
+        }
     }
 }
 
 struct TagItem_Previews: PreviewProvider {
     static var previews: some View {
-        TagItem()
+        TagItem(tagModel: TagModel(name: "Test Tag", id: UUID()), isSelected: false, tags: .constant(["name"]))
     }
 }
