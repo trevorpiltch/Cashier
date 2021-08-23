@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CardItem: View {
+    @AppStorage("accountName") var accountName = ""
+    
     var card: CardModel
     
     @ViewBuilder
@@ -45,7 +47,7 @@ struct CardItem: View {
                     Spacer()
                     
                     HStack {
-                        Text(card.name.uppercased())
+                        Text(accountName.uppercased())
                             .font(.title3)
                         
                         Spacer()

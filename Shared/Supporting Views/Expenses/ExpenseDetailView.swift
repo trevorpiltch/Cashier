@@ -101,7 +101,7 @@ struct ExpenseDetailView: View {
             }
         }
         .actionSheet(isPresented: $deleteExpense ) {
-            ActionSheet(title: Text("Are you sure you want to delete this expense? This action cannot be undone"), buttons:
+            ActionSheet(title: Text("Perform Delete"), message: Text("Are you sure you want to delete this expense? This action cannot be undone"), buttons:
                 [
                     .destructive(
                         Text("Delete"), action: { print("Delete?"); masterExpenseModel.deleteData(id: expenseModel.id) }

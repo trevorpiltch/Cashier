@@ -28,16 +28,11 @@ struct CardDetailView: View {
                     Text("Done")
                 }
                 
+               
+                
                 Spacer()
                 
-                if cardModel.getValue(obj: cardModel.data[index]).company != "Cash" {
-                    Button(action: {
-                        cardModel.selectedObject = [cardModel.data[index]]
-                        showEditCard = true
-                    }) {
-                        Text("Edit")
-                    }
-                }
+                
             }
             .padding()
             
