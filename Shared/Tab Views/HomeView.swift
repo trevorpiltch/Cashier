@@ -241,7 +241,7 @@ struct HomeView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(alignment: .top, spacing: 10) {
                     ForEach(tagModel.data, id: \.self) { data in
-                        NavigationLink(destination: TagDetailView(expenseModel: expenseModel, cardModel: cardModel, tagModel: tagModel)) {
+                        NavigationLink(destination: TagDetailView(expenseModel: expenseModel, cardModel: cardModel, tagModel: tagModel.getValue(obj: data))) {
                             TagItem(tagModel: tagModel.getValue(obj: data), isSelected: true, tags: .constant(nil))
                         }
                     }

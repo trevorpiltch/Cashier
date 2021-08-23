@@ -14,12 +14,20 @@ struct TagDetailView: View {
     
     
     var body: some View {
-        NavigationView {
-            VStack {
-                Text("Hi")
+        VStack {
+            ScrollView(.vertical, showsIndicators: false) {
+                ForEach(expenseModel.data.filter {
+                    expenseModel.getValue(obj: $0).tags.contains(tagModel.name)
+                }, id: \.self) { data in
+                    NavigationLink(destination: ExpenseDetailView(expenseModel: expenseModel.getValue(obj: data), masterExpenseModel: expenseModel, cardModel: cardModel, selectedObject: data)) {
+                        ExpenseRow(expenseModel: expenseModel.getValue(obj: data))
+                    }
+                }
             }
-            .navigationTitle(tagModel.name)
+            
+            Spacer()
         }
+        .navigationTitle(tagModel.name)
     }
 }
 
