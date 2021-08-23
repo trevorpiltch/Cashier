@@ -16,6 +16,8 @@ struct SettingsView: View {
     @ObservedObject var itemModel: ExpenseModel
     @ObservedObject var tagModel: TagModel
     
+    @State var showAddPassword = false
+    
     var body: some View {
         NavigationView {
             List {
@@ -41,6 +43,11 @@ struct SettingsView: View {
                         
                         Toggle(isOn: $lockApp) {
                             EmptyView()
+                        }
+                    }
+                    .onChange(of: self.lockApp) { value in
+                        if lockApp {
+                            showAddPassword = true
                         }
                     }
                     
@@ -87,7 +94,10 @@ struct SettingsView: View {
                 Text("Done")
             })
             .listStyle(InsetGroupedListStyle())
-            .navigationTitle("Preferences")        
+            .navigationTitle("Preferences")
+            .sheet(isPresented: $showAddPassword) {
+                CreatePasswordView()
+            }
         }
     }
 }

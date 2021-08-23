@@ -33,6 +33,7 @@ struct ManageTagsView: View {
                 }
             }
         }
+        .listStyle(InsetGroupedListStyle())
         .actionSheet(isPresented: $showDeleteConfirm) {
             ActionSheet(title: Text("Perform Delete?"), message: Text("Are you sure you want to delete this tag? This action cannot be undone."), buttons: [
                 .destructive(Text("Delete"), action: {

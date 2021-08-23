@@ -15,6 +15,7 @@ struct SearchView: View {
     // Search string to use in the search bar
     @State var searchString = ""
     @State var tags: [String]? = nil
+    @State var sortby = "Date"
     
     // Search action. Called when search key pressed on keyboard
     func search() {
@@ -31,25 +32,26 @@ struct SearchView: View {
         SearchNavigation(text: $searchString, search: search, cancel: cancel) {
             // Example SwiftUI View
             VStack {
-//                ScrollView(.horizontal, showsIndicators: false) {
-//                    HStack {
-//                        ForEach(tagModel.data, id: \.self) { data in
-//
-//                            Button(action: {
-//                                searchString = tagModel.getValue(obj: data).name
-//                                print("Tapped")
-//                            }) {
-//                            TagItem(tagModel: tagModel.getValue(obj: data), isSelected: true, tags: $tags)
-//                            }
-//                        }
-//                    }
-//                    .padding()
-//                }
-                
                 ScrollView(.vertical, showsIndicators: false) {
                     ForEach(expenseModel.data.filter {
                         if searchString != "" {
                             return expenseModel.getValue(obj: $0).item.lowercased().contains(searchString.lowercased()) || "\(expenseModel.getValue(obj: $0).amount)".contains(searchString)
+                        }
+                        else {
+                            return true
+                        }
+                    }.sorted {
+                        if sortby == "date descending" {
+                            return expenseModel.getValue(obj: $0).date < expenseModel.getValue(obj: $1).date
+                        }
+                        else if sortby == "date ascending" {
+                            return expenseModel.getValue(obj: $0).date > expenseModel.getValue(obj: $1).date
+                        }
+                        else if sortby == "amount high to low" {
+                            return expenseModel.getValue(obj: $0).amount > expenseModel.getValue(obj: $1).amount
+                        }
+                        else if sortby == "amount low to high" {
+                            return expenseModel.getValue(obj: $0).amount < expenseModel.getValue(obj: $1).amount
                         }
                         else {
                             return true
@@ -64,6 +66,31 @@ struct SearchView: View {
                     Spacer()
                 }
                 .navigationTitle("Search")
+                .navigationBarItems(trailing:
+                    Menu("\(Image(systemName: "arrow.up.arrow.down"))") {
+                        Button(action: {
+                            sortby = "date descending"
+                        }) {
+                            Label("Newest to oldest", systemImage: "calendar.day.timeline.left")
+                        }
+                        Button(action: {
+                            sortby = "date ascending"
+                        }) {
+                            Label("Oldest to newest", systemImage: "calendar.day.timeline.right")
+                        }
+                        Button(action: {
+                            sortby = "amount high to low"
+                        }) {
+                            Label("Amount high to low", systemImage: "creditcard")
+                        }
+                        Button(action: {
+                            sortby = "amount low to high"
+                        }) {
+                            Label("Amount low to high", systemImage: "banknote")
+                        }
+                        
+                    }
+                )
             }
         }
         .edgesIgnoringSafeArea(.top)

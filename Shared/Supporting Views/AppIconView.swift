@@ -78,6 +78,7 @@ struct AppIconView: View {
                 }
             }
         }
+        .listStyle(InsetGroupedListStyle())
         .navigationTitle("App Icon")
     }
 }
