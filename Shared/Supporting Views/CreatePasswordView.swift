@@ -32,7 +32,7 @@ struct CreatePasswordView: View {
                     .padding(.vertical, 50)
                 }
                 
-           
+                Spacer()
                 
                 HStack(spacing: (screen.width - 32) / 6) {
                     Button(action: {
@@ -129,21 +129,33 @@ struct CreatePasswordView: View {
                         .background(Color("OffGray"))
                         .clipShape(RoundedRectangle(cornerRadius: 11, style: .continuous))
                 }
-                
-                Spacer()
+                .padding(.bottom, screen.height / 11)
+            
+//                Spacer()
                 
                 Text(samePassword ? "" : "The passwords don't match please try again.")
                     .multilineTextAlignment(.center)
                     .font(.body)
             }
             .font(.title2)
-            .navigationTitle(navigationTitle)
+            .navigationBarTitle(Text("\(navigationTitle)"), displayMode: .inline)
+            .navigationBarItems(leading:
+                                    Button(action: {
+                password1 = ""
+                password2 = ""
+                samePassword = true
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                Text("Cancel")
+            }
+            )
         }
     }
     
     func addToPassword(number: String) {
         if password1.count < 4 && password2 == "" {
             password1.append(number)
+            
             if password1.count == 4 {
                 navigationTitle = "Re-enter Password"
             }
