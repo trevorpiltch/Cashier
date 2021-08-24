@@ -30,9 +30,9 @@ struct AddTagItem: View {
                 })
             }
             .padding(5)
-            .foregroundColor(Color.black.opacity(0.8))
+            .foregroundColor(Color("Text").opacity(0.8))
             .frame(width: 100, height: 44)
-            .background(Color.white)
+            .background(Color("OffG ray"))
             .cornerRadius(9)
         }
 

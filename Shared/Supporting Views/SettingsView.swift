@@ -11,6 +11,7 @@ struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @AppStorage("LockApp") var lockApp: Bool = false
+    @AppStorage("UseFaceID") var useFaceID = false
     @AppStorage("accountName") var accountName = "Trevor Piltch"
     
     @ObservedObject var itemModel: ExpenseModel
@@ -19,6 +20,17 @@ struct SettingsView: View {
     @State var showAddPassword = false
     
     var body: some View {
+        ZStack {
+            if !showAddPassword {
+                settings
+            }
+            else {
+                CreatePasswordView(showAddPassword: $showAddPassword)
+            }
+        }
+    }
+    
+    var settings: some View {
         NavigationView {
             List {
                 Section(header: Text("General")) {
@@ -48,6 +60,20 @@ struct SettingsView: View {
                     .onChange(of: self.lockApp) { value in
                         if lockApp {
                             showAddPassword = true
+                        }
+                    }
+                    
+                    if lockApp {
+                        HStack {
+                            RoundedRectImageItem(imageName: "face.smiling.fill", color: .green, size: 36)
+                            
+                            Text("Use Biometrics")
+                            
+                            Spacer()
+                            
+                            Toggle(isOn: $useFaceID) {
+                                EmptyView()
+                            }
                         }
                     }
                     
@@ -95,9 +121,6 @@ struct SettingsView: View {
             })
             .listStyle(InsetGroupedListStyle())
             .navigationTitle("Preferences")
-            .sheet(isPresented: $showAddPassword) {
-                CreatePasswordView()
-            }
         }
     }
 }

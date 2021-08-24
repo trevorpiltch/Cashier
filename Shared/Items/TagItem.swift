@@ -17,7 +17,7 @@ struct TagItem: View {
         VStack {
             Text(tagModel.name)
         }
-        .foregroundColor(isSelected ? Color.white : Color.black.opacity(0.6))
+        .foregroundColor(isSelected ? Color.white : Color("Text").opacity(0.6))
         .frame(width: CGFloat(tagModel.name.count * 10 + 10), height: 44)
         .background(isSelected ? Color.accentColor : Color.black.opacity(0.2))
         .cornerRadius(11)

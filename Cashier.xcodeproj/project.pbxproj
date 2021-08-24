@@ -17,6 +17,7 @@
 		081D663D25938E0B001052AF /* AllExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081D663C25938E0B001052AF /* AllExpensesView.swift */; };
 		081F6A19260157DC000896A6 /* CashCardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081F6A18260157DC000896A6 /* CashCardItem.swift */; };
 		082DDE6725A0F0A300309A53 /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082DDE6625A0F0A300309A53 /* CardItem.swift */; };
+		082EDF2926D5953D007F5ECF /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082EDF2826D5953D007F5ECF /* PasswordView.swift */; };
 		0831BEB226D41ED5009E5AD4 /* CreatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0831BEB126D41ED5009E5AD4 /* CreatePasswordView.swift */; };
 		083D30C426D15D4B00E1FC13 /* AppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D30C326D15D4B00E1FC13 /* AppIconView.swift */; };
 		083D30C626D15DF100E1FC13 /* Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 083D30C526D15DF100E1FC13 /* Blue.png */; };
@@ -58,6 +59,7 @@
 		081D663C25938E0B001052AF /* AllExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllExpensesView.swift; sourceTree = "<group>"; };
 		081F6A18260157DC000896A6 /* CashCardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashCardItem.swift; sourceTree = "<group>"; };
 		082DDE6625A0F0A300309A53 /* CardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItem.swift; sourceTree = "<group>"; };
+		082EDF2826D5953D007F5ECF /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
 		0831BEB126D41ED5009E5AD4 /* CreatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordView.swift; sourceTree = "<group>"; };
 		083D30C326D15D4B00E1FC13 /* AppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconView.swift; sourceTree = "<group>"; };
 		083D30C526D15DF100E1FC13 /* Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue.png; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				08D42E0626D2D0DC00B84B09 /* ManageTagsView.swift */,
 				083D30C326D15D4B00E1FC13 /* AppIconView.swift */,
 				0831BEB126D41ED5009E5AD4 /* CreatePasswordView.swift */,
+				082EDF2826D5953D007F5ECF /* PasswordView.swift */,
 				081C41B226C6F66E00CBFA7C /* OnBoardingView.swift */,
 				0862130826D2F05100078713 /* TagDetailView.swift */,
 				0854D83625C8527500C91B22 /* Launch Screen.storyboard */,
@@ -326,6 +329,7 @@
 				087CB3F1258E77D500C6F9DA /* Cashier4.xcdatamodeld in Sources */,
 				082DDE6725A0F0A300309A53 /* CardItem.swift in Sources */,
 				081C41B326C6F66E00CBFA7C /* OnBoardingView.swift in Sources */,
+				082EDF2926D5953D007F5ECF /* PasswordView.swift in Sources */,
 				087CB3F7258E77D500C6F9DA /* Persistence.swift in Sources */,
 				081A22CD25D03FA8007D5E75 /* ExpenseModel.swift in Sources */,
 				0854D84225C8535B00C91B22 /* AddExpenseView.swift in Sources */,

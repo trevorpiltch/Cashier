@@ -20,7 +20,6 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            
             TabView {
                 NavigationView {
                     HomeView(expenseModel: expenseModel, cardModel: cardModel, tagModel: tagModel)

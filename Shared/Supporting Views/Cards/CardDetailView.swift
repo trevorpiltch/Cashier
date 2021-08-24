@@ -28,15 +28,6 @@ struct CardDetailView: View {
                     Text("Done")
                 }
                 
-                if cardModel.getValue(obj: cardModel.data[index]).company != "Cash" {
-                     Button(action: {
-                         cardModel.selectedObject = [cardModel.data[index]]
-                         showEditCard = true
-                     }) {
-                         Text("Edit")
-                     }
-                 }
-                
                 Spacer()
             }
             .padding()
@@ -55,23 +46,42 @@ struct CardDetailView: View {
             }
             .padding(.top)
             
-            if cardModel.getValue(obj: cardModel.data[index]).company != "Cash" {
-                Button(action: {
-                    deleteCard = true
-                }) {
-                    Text("Delete")
-                        .foregroundColor(.white)
-                        .frame(width: screen.width - 32, height: 44)
-                        .background(Color.red)
-                        .cornerRadius(11)
-                        .padding(.bottom)
+            HStack {
+                if cardModel.getValue(obj: cardModel.data[index]).company != "Cash" {
+                     Button(action: {
+                         cardModel.selectedObject = [cardModel.data[index]]
+                         showEditCard = true
+                     }) {
+                         Text("Edit")
+                             .foregroundColor(.white)
+                             .frame(width: 150, height: 44)
+                             .background(Color.accentColor)
+                             .cornerRadius(11)
+                             .padding(.bottom)
+                     }
+                 }
+                
+                Spacer()
+                
+                if cardModel.getValue(obj: cardModel.data[index]).company != "Cash" {
+                    Button(action: {
+                        deleteCard = true
+                    }) {
+                        Text("Delete")
+                            .foregroundColor(.white)
+                            .frame(width: 150, height: 44)
+                            .background(Color.red)
+                            .cornerRadius(11)
+                            .padding(.bottom)
+                    }
                 }
             }
-            
+            .padding()
             
             Spacer()
         }
         .background(Color("Background"))
+        .edgesIgnoringSafeArea(.bottom)
         .actionSheet(isPresented: $deleteCard) {
             ActionSheet(title: Text("Are you sure you want to delete this card? This action cannot be undone"), buttons:
                             [.destructive(Text("Delete"), action: {

@@ -34,7 +34,7 @@ struct TagDetailView: View {
                 Spacer()
             }
             .navigationTitle(tagModel.name)
-            .searchable(text: $searchQuery)
+//            .searchable(text: $searchQuery)
         }
         else {
             VStack {

@@ -1,38 +1,30 @@
 //
-//  CreatePasswordView.swift
+//  PasswordView.swift
 //  Cashier (iOS)
 //
-//  Created by Trevor Piltch on 8/23/21.
+//  Created by Trevor Piltch on 8/24/21.
 //
 
 import SwiftUI
 
-struct CreatePasswordView: View {
-    @AppStorage("Password") var password = ""
+struct PasswordView: View {
+    @AppStorage("Password") var appPassword = ""
+    @AppStorage("LockApp") var lockApp: Bool = false
     
-    @State var password1 = ""
-    @State var password2 = ""
+    @State var password = ""
     @State var samePassword = true
-    @State var navigationTitle = "Add Password"
     
-    @Binding var showAddPassword: Bool
+    @Binding var isUnlocked: Bool
+    @Binding var authenticate: Bool
     
     var body: some View {
         NavigationView {
             VStack {
                 HStack {
-                    if navigationTitle == "Add Password" {
-                        Image(systemName: password1.count > 0 ? "circle.fill" : "circle")
-                        Image(systemName: password1.count > 1 ? "circle.fill" : "circle")
-                        Image(systemName: password1.count > 2 ? "circle.fill" : "circle")
-                        Image(systemName: password1.count > 3 ? "circle.fill" : "circle")
-                    }
-                    else {
-                        Image(systemName: password2.count > 0 ? "circle.fill" : "circle")
-                        Image(systemName: password2.count > 1 ? "circle.fill" : "circle")
-                        Image(systemName: password2.count > 2 ? "circle.fill" : "circle")
-                        Image(systemName: password2.count > 3 ? "circle.fill" : "circle")
-                    }
+                    Image(systemName: password.count > 0 ? "circle.fill" : "circle")
+                    Image(systemName: password.count > 1 ? "circle.fill" : "circle")
+                    Image(systemName: password.count > 2 ? "circle.fill" : "circle")
+                    Image(systemName: password.count > 3 ? "circle.fill" : "circle")
                 }
                 .foregroundColor(.accentColor)
                 .font(.largeTitle)
@@ -68,6 +60,7 @@ struct CreatePasswordView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 11, style: .continuous))
                     }
                 }
+                .padding()
                 
                 HStack(spacing: (screen.width - 32) / 6) {
                     Button(action: {
@@ -97,6 +90,7 @@ struct CreatePasswordView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 11, style: .continuous))
                     }
                 }
+                .padding()
                 
                 HStack(spacing: (screen.width - 32) / 6) {
                     Button(action: {
@@ -126,8 +120,19 @@ struct CreatePasswordView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 11, style: .continuous))
                     }
                 }
+                .padding()
                 
-                HStack(spacing: (screen.width - 32) / 2) {
+                HStack(spacing: (screen.width - 32) / 6) {
+                    Button(action: {
+                        authenticate = true
+                    }) {
+                        Image(systemName: "faceid")
+                            .frame(width: 60, height: 60)
+                            .background(Color.accentColor)
+                            .clipShape(RoundedRectangle(cornerRadius: 11, style: .continuous))
+                            .foregroundColor(.white)
+                    }
+                    
                     Button(action: {
                         addToPassword(number: "9")
                     }) {
@@ -136,76 +141,61 @@ struct CreatePasswordView: View {
                             .background(Color("OffGray"))
                             .clipShape(RoundedRectangle(cornerRadius: 11, style: .continuous))
                     }
+                
                     
                     Button(action: {
-                        if navigationTitle == "Add Password" {
-                            password1.removeLast()
-                        }
-                        else {
-                            password2.removeLast()
-                        }
+                        password.removeLast()
                     }) {
                         Image(systemName: "delete.left.fill")
                             .frame(width: 60, height: 60)
                             .background(Color.red)
                             .clipShape(RoundedRectangle(cornerRadius: 11, style: .continuous))
                             .foregroundColor(.white)
-                            .opacity(navigationTitle == "Add Password" ? password1.count == 0 ? 0.3 : 1 :  password2.count == 0 ? 0.3 : 1)
+                            .opacity(password.count == 0 ? 0.3 : 1)
                     }
-                    .disabled(navigationTitle == "Add Password" ? password1.count == 0 ? true : false :  password2.count == 0 ? true : false)
-                
+                    .disabled(password.count == 0 ? true : false)
                 }
+                .padding(.top)
                 .padding(.bottom, screen.height / 11)
                 
                 Text(samePassword ? "" : "The passwords don't match please try again.")
                     .multilineTextAlignment(.center)
                     .font(.body)
             }
-            .font(.title2)
-            .navigationBarTitle(Text("\(navigationTitle)"), displayMode: .inline)
-            .navigationBarItems(leading:
-                                    Button(action: {
-                showAddPassword = false
-                password1 = ""
-                password2 = ""
-                samePassword = true
-            }) {
-                Text("Cancel")
-            }
-            )
+            .navigationBarTitle(Text("Password"), displayMode: .inline)
         }
     }
     
     func addToPassword(number: String) {
-        if password1.count < 4 && password2 == "" {
-            password1.append(number)
-            
-            if password1.count == 4 {
-                navigationTitle = "Re-enter Password"
-            }
+        if password.count < 4 {
+            password.append(number)
         }
-        else if password2.count < 4{
-            password2.append(number)
+        
+        if password.count == 4 {
+            samePassword = password == appPassword
             
-            if password2.count == 4 {
-                samePassword = password1 == password2
-                
-                if samePassword {
-                    password = password1
-                    showAddPassword = false
+            if samePassword {
+                if lockApp {
+                    isUnlocked = true
+                    samePassword = true
+                    password = ""
                 }
                 else {
-                    password1 = ""
-                    password2 = ""
-                    navigationTitle = "Add Password"
+                    lockApp = false
+                    password = ""
+                    appPassword = ""
+                    samePassword = true
                 }
+            }
+            else {
+                password = ""
             }
         }
     }
 }
 
-struct CreatePasswordView_Previews: PreviewProvider {
+struct PasswordView_Previews: PreviewProvider {
     static var previews: some View {
-        CreatePasswordView(showAddPassword: .constant(true))
+        PasswordView(isUnlocked: .constant(false), authenticate: .constant(false))
     }
 }
