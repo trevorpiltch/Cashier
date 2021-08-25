@@ -124,6 +124,9 @@ struct AddCardView: View {
         .onTapGesture {
             hideKeyboard()
         }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+            presentationMode.wrappedValue.dismiss()
+        }
     }
     
     var cardView: some View {

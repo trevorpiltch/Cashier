@@ -127,6 +127,9 @@ struct AddExpenseView: View {
                 Text("Add")
             })
         }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+            presentationMode.wrappedValue.dismiss()
+        }
     }
 }
 

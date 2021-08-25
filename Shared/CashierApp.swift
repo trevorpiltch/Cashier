@@ -10,6 +10,7 @@ import LocalAuthentication
 
 @main
 struct CashierApp: App {
+    @Environment(\.presentationMode) var presentationMode
     @AppStorage("hasOpened") var hasOpened = false
     @AppStorage("LockApp") var lockApp: Bool = false
     @AppStorage("UseFaceID") var useFaceID = false
@@ -24,17 +25,10 @@ struct CashierApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if hasOpened {
-                ZStack {
+            ZStack {
+                if hasOpened {
                     if isUnlocked || !lockApp {
                         ContentView(expenseModel: ExpenseModel(), cardModel: cardModel, tagModel: tagModel)
-                            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
-                                if useFaceID {
-                                    // When the app enters the background lock the app
-                                    isUnlocked = false
-                                    isInBackground = true
-                                }
-                            }
                     }
                     else {
                         PasswordView(isUnlocked: $isUnlocked, authenticate: $authenticateApp)
@@ -48,18 +42,25 @@ struct CashierApp: App {
                             }
                     }
                 }
+                else {
+                    OnBoardingView()
+                        .onAppear {
+                            cardModel.company = "Cash"
+                            cardModel.writeData()
+                            cardModel.resetData()
+                        }
+                }
             }
-            else {
-                OnBoardingView()
-                    .onAppear {
-                        cardModel.company = "Cash"
-                        cardModel.writeData()
-                        cardModel.resetData()
-                    }
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+                presentationMode.wrappedValue.dismiss()
+                if useFaceID {
+                    // When the app enters the background lock the app
+                    isUnlocked = false
+                    isInBackground = true
+                }
             }
         }
-       
-        
+    
     }
     
     func authenticate() {

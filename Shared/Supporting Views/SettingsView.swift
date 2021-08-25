@@ -121,6 +121,9 @@ struct SettingsView: View {
             })
             .listStyle(InsetGroupedListStyle())
             .navigationTitle("Preferences")
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+                presentationMode.wrappedValue.dismiss()
+            }
         }
     }
 }
