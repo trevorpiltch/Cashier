@@ -100,22 +100,23 @@ struct EditExpenseView: View {
             }, trailing: Button(action: {
                 if let itemAmount = Double(amount) {
                     masterExpenseModel.amount = itemAmount
-
+                    
                     masterExpenseModel.date = date
                     masterExpenseModel.item = item
                     masterExpenseModel.selectedCard = "\(selectedCard.company): \(selectedCard.number)"
                     masterExpenseModel.type = "Expense"
                     masterExpenseModel.tags = tags!
-
+                    
                     masterExpenseModel.updateData()
                     masterExpenseModel.resetData()
-
+                    
                     self.presentationMode.wrappedValue.dismiss()
                 }
             }) {
                 Text("Done")
             }
-        )
+            )
+            .keyboardAdaptive()
         }
     }
 }

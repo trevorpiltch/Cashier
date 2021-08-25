@@ -41,6 +41,7 @@
 		089135C726D0590200B21F85 /* CardEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089135C626D0590200B21F85 /* CardEditView.swift */; };
 		08D342FD2590F5370042D66B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D342FC2590F5370042D66B /* CloudKit.framework */; };
 		08D42E0726D2D0DC00B84B09 /* ManageTagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D42E0626D2D0DC00B84B09 /* ManageTagsView.swift */; };
+		08DA384226D6865000490397 /* AboutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DA384126D6865000490397 /* AboutPage.swift */; };
 		08EEBAC726C84816008F0DD0 /* TagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EEBAC626C84816008F0DD0 /* TagModel.swift */; };
 		08EEBAC926C84A12008F0DD0 /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EEBAC826C84A12008F0DD0 /* TagItem.swift */; };
 		08EEBACB26C84EF9008F0DD0 /* AddTagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EEBACA26C84EF9008F0DD0 /* AddTagItem.swift */; };
@@ -89,6 +90,7 @@
 		08D342FC2590F5370042D66B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		08D3430B2590F7AE0042D66B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		08D42E0626D2D0DC00B84B09 /* ManageTagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTagsView.swift; sourceTree = "<group>"; };
+		08DA384126D6865000490397 /* AboutPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPage.swift; sourceTree = "<group>"; };
 		08EEBAC626C84816008F0DD0 /* TagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagModel.swift; sourceTree = "<group>"; };
 		08EEBAC826C84A12008F0DD0 /* TagItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItem.swift; sourceTree = "<group>"; };
 		08EEBACA26C84EF9008F0DD0 /* AddTagItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagItem.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				081A31E5258FD9EC0061EA1E /* SettingsView.swift */,
+				08DA384126D6865000490397 /* AboutPage.swift */,
 				08D42E0626D2D0DC00B84B09 /* ManageTagsView.swift */,
 				083D30C326D15D4B00E1FC13 /* AppIconView.swift */,
 				0831BEB126D41ED5009E5AD4 /* CreatePasswordView.swift */,
@@ -327,6 +330,7 @@
 			files = (
 				087B179E26C9675500C7FBFA /* ExpenseDetailView.swift in Sources */,
 				087CB3F1258E77D500C6F9DA /* Cashier4.xcdatamodeld in Sources */,
+				08DA384226D6865000490397 /* AboutPage.swift in Sources */,
 				082DDE6725A0F0A300309A53 /* CardItem.swift in Sources */,
 				081C41B326C6F66E00CBFA7C /* OnBoardingView.swift in Sources */,
 				082EDF2926D5953D007F5ECF /* PasswordView.swift in Sources */,

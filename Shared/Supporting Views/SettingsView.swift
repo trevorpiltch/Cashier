@@ -38,9 +38,8 @@ struct SettingsView: View {
                         RoundedRectImageItem(imageName: "person.circle.fill", color: .blue, size: 36)
                         
                         VStack(alignment: .leading) {
-                            Text(accountName)
+                            TextField("", text: $accountName)
                                 .font(.title2)
-                                .bold()
                             
                             Text("Total Spending: $\(itemModel.calculateTotal(), specifier: "%.2f")")
                         }
@@ -110,7 +109,9 @@ struct SettingsView: View {
                     HStack {
                         RoundedRectImageItem(imageName: "figure.wave.circle.fill", color: .purple, size: 36)
                         
-                        Text("About")
+                        NavigationLink(destination: AboutPage()) {
+                            Text("About")
+                        }
                     }
                 }
             }

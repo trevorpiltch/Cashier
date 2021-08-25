@@ -69,11 +69,6 @@ struct ExpenseDetailView: View {
                     }
                 }
             }
-            .onTapGesture {
-                for i in expenseModel.tags {
-                    print(i)
-                }
-            }
         }
         .listStyle(InsetGroupedListStyle())
         .navigationTitle(expenseModel.item)

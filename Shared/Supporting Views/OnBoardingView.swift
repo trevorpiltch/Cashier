@@ -26,6 +26,7 @@ struct OnBoardingView: View {
                     RoundedRectImageItem(imageName: "figure.walk.circle.fill", color: .orange, size: 36)
                     
                     Text("Cashier is your personal financial assistant. Keep track of expenses and see your weekly, monthly, and yearly totals.")
+                        .multilineTextAlignment(.leading)
                         
                 }
                 .padding()

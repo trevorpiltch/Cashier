@@ -120,10 +120,7 @@ struct CardEditView: View {
             .disabled(cardProvider == "" || cardNumber == ""))
             
         }
-        .offset(y: -keyboard.currentHeight * 0.9)
-        .onTapGesture {
-            hideKeyboard()
-        }
+        .keyboardAdaptive()
     }
     
     var cardView: some View {

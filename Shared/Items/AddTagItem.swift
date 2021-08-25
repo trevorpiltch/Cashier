@@ -23,10 +23,12 @@ struct AddTagItem: View {
                 Image(systemName: "plus")
                 
                 TextField("Add Tag", text: $name, onCommit: {
-                    tagModel.name = name
-                    tagModel.id = UUID()
-                    tagModel.writeData()
-                    name = ""
+                    if name != "" {
+                        tagModel.name = name
+                        tagModel.id = UUID()
+                        tagModel.writeData()
+                        name = ""
+                    }
                 })
             }
             .padding(5)

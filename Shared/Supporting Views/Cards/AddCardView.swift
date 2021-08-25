@@ -120,13 +120,10 @@ struct AddCardView: View {
             .disabled(cardProvider == "" || cardNumber == ""))
             
         }
-        .offset(y: -keyboard.currentHeight * 0.9)
-        .onTapGesture {
-            hideKeyboard()
-        }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
             presentationMode.wrappedValue.dismiss()
         }
+        .keyboardAdaptive()
     }
     
     var cardView: some View {
@@ -180,6 +177,7 @@ struct AddCardView: View {
         .background(gradients[gradientNumber])
         .cornerRadius(21)
         .shadow(color: gradientColors[gradientNumber].opacity(0.2) , radius: 10, x: 0, y: 10)
+        
     }
 }
 

@@ -14,6 +14,8 @@ struct AddExpenseView: View {
     @ObservedObject var cardModel: CardModel
     @ObservedObject var tagModel: TagModel
     
+    @StateObject var keyboard = Keyboard()
+    
     @State var selectedCard = CardModel()
     @State var date = Date()
     @State var amount = ""
@@ -25,7 +27,7 @@ struct AddExpenseView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .center, spacing: 20) {
-                List  {
+                List {
                     TabView {
                         ForEach(cardModel.data.indices, id: \.self) { i in
                             ZStack {
@@ -77,7 +79,7 @@ struct AddExpenseView: View {
                         Spacer()
                         
                         TextField("0.00", text: $amount)
-                            .keyboardType(.numberPad)
+                            .keyboardType(.decimalPad)
                     }
                     
                     HStack {
@@ -94,6 +96,7 @@ struct AddExpenseView: View {
                         }
                     }
                 }
+                
                 .listStyle(InsetGroupedListStyle())
             }
             .navigationTitle("Add Expense")
@@ -125,11 +128,14 @@ struct AddExpenseView: View {
                 
             }) {
                 Text("Add")
-            })
+            }
+                                    .disabled(item == "" || amount == "" ? true : false)
+            )
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
             presentationMode.wrappedValue.dismiss()
         }
+        .keyboardAdaptive()
     }
 }
 
