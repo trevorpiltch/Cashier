@@ -10,6 +10,7 @@ import SwiftUI
 struct CardsView: View {
     @ObservedObject var cardModel: CardModel
     @ObservedObject var expenseModel: ExpenseModel
+    
     @Binding var showCardDetail: Bool
     @Binding var index: Int
     

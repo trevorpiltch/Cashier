@@ -11,6 +11,8 @@ struct OnBoardingView: View {
     @AppStorage("accountName") var accountName = ""
     @AppStorage("hasOpened") var hasOpened = false
     
+    @ObservedObject var cardModel: CardModel
+    
     var body: some View {
         VStack(alignment: .center) {
             Text("Welcome to Cashier")
@@ -65,6 +67,9 @@ struct OnBoardingView: View {
             
             Button(action: {
                 hasOpened = true
+                cardModel.company = "Cash"
+                cardModel.writeData()
+                cardModel.resetData()
             }) {
                 Text("Begin")
                     .frame(width: screen.width - 22, height: 44)
@@ -79,6 +84,6 @@ struct OnBoardingView: View {
 
 struct OnBoardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnBoardingView()
+        OnBoardingView(cardModel: CardModel())
     }
 }

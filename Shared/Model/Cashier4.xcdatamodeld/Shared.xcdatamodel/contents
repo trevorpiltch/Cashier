@@ -7,13 +7,13 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="number" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="Expense" representedClassName="Expense" syncable="YES">
+    <entity name="Expense" representedClassName="Expense" syncable="YES" coreSpotlightDisplayNameExpression="Expense">
         <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="item" optional="YES" attributeType="String"/>
+        <attribute name="item" optional="YES" attributeType="String" spotlightIndexingEnabled="YES"/>
         <attribute name="selectedCard" optional="YES" attributeType="String"/>
-        <attribute name="tags" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData " customClassName=".[NSString]"/>
+        <attribute name="tags" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData " customClassName=".[String]"/>
         <attribute name="type" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Tags" representedClassName="Tags" syncable="YES" codeGenerationType="class">

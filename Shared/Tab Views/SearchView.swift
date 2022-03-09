@@ -42,10 +42,10 @@ struct SearchView: View {
                         }
                     }.sorted {
                         if sortby == "date descending" {
-                            return expenseModel.getValue(obj: $0).date < expenseModel.getValue(obj: $1).date
+                            return expenseModel.getValue(obj: $0).date > expenseModel.getValue(obj: $1).date
                         }
                         else if sortby == "date ascending" {
-                            return expenseModel.getValue(obj: $0).date > expenseModel.getValue(obj: $1).date
+                            return expenseModel.getValue(obj: $0).date < expenseModel.getValue(obj: $1).date
                         }
                         else if sortby == "amount high to low" {
                             return expenseModel.getValue(obj: $0).amount > expenseModel.getValue(obj: $1).amount

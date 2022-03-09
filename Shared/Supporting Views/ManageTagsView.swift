@@ -32,6 +32,11 @@ struct ManageTagsView: View {
                     }
                 }
             }
+            
+            TextField("Add Tag", text: $tagModel.name, onCommit: {
+                tagModel.id = UUID()
+                tagModel.writeData()
+            })
         }
         .listStyle(InsetGroupedListStyle())
         .actionSheet(isPresented: $showDeleteConfirm) {

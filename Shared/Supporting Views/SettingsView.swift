@@ -60,6 +60,9 @@ struct SettingsView: View {
                         if lockApp {
                             showAddPassword = true
                         }
+                        else {
+                            useFaceID = false
+                        }
                     }
                     
                     if lockApp {

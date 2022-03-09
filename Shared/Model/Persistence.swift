@@ -6,20 +6,34 @@
 //
 
 import CoreData
+import CoreSpotlight
+import UIKit
 
 // Core Data stuff
 var persistentContainer: NSPersistentContainer = {
-//    let storeURL = AppGroup.facts.containerURL.appendingPathComponent("World.plist")
-//    let description = NSPersistentStoreDescription(url: storeURL)
+    var spotlightIndexer: ExpenseSpotlightDelegate?
     let container = NSPersistentContainer(name: "Cashier4")
-//    container.persistentStoreDescriptions = [description]
-    container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-        if let error = error as NSError? {
-//            fatalError("Unresolved error \(error), \(error.userInfo)")
-        }
-    })
+    
+    guard let description = container.persistentStoreDescriptions.first else {
+        fatalError("###\(#function): Failed to retrieve a persistent store description.")
+    }
+    
+    description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+    description.type = NSSQLiteStoreType
+    
+    container.loadPersistentStores(completionHandler: { (_, error) in
+        guard let error = error as NSError? else { return }
+        fatalError("###\(#function): Failed to load persistent stores: \(error)")
+    }
+    )
+    
+    spotlightIndexer = ExpenseSpotlightDelegate(forStoreWith: description, coordinator: container.persistentStoreCoordinator)
+    
+    spotlightIndexer?.startSpotlightIndexing()
+    
     return container
 }()
+
 
 struct PersistenceController {
     static let shared = PersistenceController()
@@ -44,15 +58,15 @@ struct PersistenceController {
         return result
     }()
 
-    let container: NSPersistentContainer
+    let container: NSPersistentContainer = NSPersistentContainer(name: "Cashier4")
 
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "Cashier4")
         print("In Memory")
         
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
+        
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -72,3 +86,28 @@ struct PersistenceController {
     }
 }
 
+class ExpenseSpotlightDelegate: NSCoreDataCoreSpotlightDelegate {
+//    override func indexName() -> String? {
+//        return "item-index"
+//    }
+    
+    override func attributeSet(for object: NSManagedObject) -> CSSearchableItemAttributeSet? {
+        let model = ExpenseModel()
+        
+        let expense = model.getValue(obj: object)
+        
+        let attributeSet = CSSearchableItemAttributeSet(contentType: .text)
+        
+        attributeSet.identifier =  expense.item
+        attributeSet.displayName = "$\(expense.amount): \(expense.item)"
+        attributeSet.contentDescription = dateFormatter.string(from: expense.date)
+        attributeSet.thumbnailData = UIImage(named: "Expense")?.pngData()
+        
+        
+        for tag in expense.tags {
+            attributeSet.keywords?.append(tag)
+        }
+        
+        return attributeSet
+    }
+}

@@ -77,7 +77,7 @@ class ExpenseModel: ObservableObject, Identifiable {
         catch {
             print(error.localizedDescription)
         }
-        
+    
         objectWillChange.send()
         sortData()
     }
@@ -106,6 +106,8 @@ class ExpenseModel: ObservableObject, Identifiable {
             self.data.sort { (expense1, expense2) -> Bool in
                 return getValue(obj: expense1).date > getValue(obj: expense2).date
             }
+            
+            generator.notificationOccurred(.success)
         }
         catch {
             print(error.localizedDescription)

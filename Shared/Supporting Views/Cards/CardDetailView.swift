@@ -30,7 +30,7 @@ struct CardDetailView: View {
                 
                 Spacer()
             }
-            .padding()
+            
             
             CardItem(card: cardModel.getValue(obj: cardModel.data[index]))
                 .matchedGeometryEffect(id: cardModel.getValue(obj: cardModel.data[index]).id, in: namespace)
@@ -80,8 +80,10 @@ struct CardDetailView: View {
             
             Spacer()
         }
+        .padding()
+        .padding(.top, 32)
         .background(Color("Background"))
-        .edgesIgnoringSafeArea(.bottom)
+        .edgesIgnoringSafeArea(.vertical)
         .actionSheet(isPresented: $deleteCard) {
             ActionSheet(title: Text("Are you sure you want to delete this card? This action cannot be undone"), buttons:
                             [.destructive(Text("Delete"), action: {

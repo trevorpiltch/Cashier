@@ -11,7 +11,6 @@ import CoreData
 
 
 extension Expense {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Expense> {
         return NSFetchRequest<Expense>(entityName: "Expense")
     }
@@ -23,5 +22,4 @@ extension Expense {
     @NSManaged public var selectedCard: String?
     @NSManaged public var type: String?
     @NSManaged public var tags: [NSString]?
-
 }

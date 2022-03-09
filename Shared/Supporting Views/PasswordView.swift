@@ -10,6 +10,7 @@ import SwiftUI
 struct PasswordView: View {
     @AppStorage("Password") var appPassword = ""
     @AppStorage("LockApp") var lockApp: Bool = false
+    @AppStorage("UseFaceID") var useFaceID = false
     
     @State var password = ""
     @State var samePassword = true
@@ -124,6 +125,7 @@ struct PasswordView: View {
                 
                 HStack(spacing: (screen.width - 32) / 6) {
                     Button(action: {
+                        impactMedium.impactOccurred()
                         authenticate = true
                     }) {
                         Image(systemName: "faceid")
@@ -132,6 +134,7 @@ struct PasswordView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 11, style: .continuous))
                             .foregroundColor(.white)
                     }
+                    .disabled(!useFaceID)
                     
                     Button(action: {
                         addToPassword(number: "9")
@@ -144,6 +147,7 @@ struct PasswordView: View {
                 
                     
                     Button(action: {
+                        impactMedium.impactOccurred()
                         password.removeLast()
                     }) {
                         Image(systemName: "delete.left.fill")
@@ -167,6 +171,8 @@ struct PasswordView: View {
     }
     
     func addToPassword(number: String) {
+        impactMedium.impactOccurred()
+        
         if password.count < 4 {
             password.append(number)
         }
@@ -188,6 +194,7 @@ struct PasswordView: View {
                 }
             }
             else {
+                generator.notificationOccurred(.error)
                 password = ""
             }
         }

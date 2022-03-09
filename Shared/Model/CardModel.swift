@@ -65,6 +65,8 @@ class CardModel: ObservableObject {
             try context.save()
             
             self.data.append(entity)
+            
+            generator.notificationOccurred(.success)
         }
         catch {
             print(error.localizedDescription)

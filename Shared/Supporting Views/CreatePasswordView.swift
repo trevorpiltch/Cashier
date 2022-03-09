@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CreatePasswordView: View {
     @AppStorage("Password") var password = ""
+    @AppStorage("LockApp") var lockApp: Bool = false
     
     @State var password1 = ""
     @State var password2 = ""
@@ -68,6 +69,7 @@ struct CreatePasswordView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 11, style: .continuous))
                     }
                 }
+                .padding()
                 
                 HStack(spacing: (screen.width - 32) / 6) {
                     Button(action: {
@@ -97,6 +99,7 @@ struct CreatePasswordView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 11, style: .continuous))
                     }
                 }
+                .padding()
                 
                 HStack(spacing: (screen.width - 32) / 6) {
                     Button(action: {
@@ -126,6 +129,7 @@ struct CreatePasswordView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 11, style: .continuous))
                     }
                 }
+                .padding()
                 
                 HStack(spacing: (screen.width - 32) / 2) {
                     Button(action: {
@@ -138,6 +142,7 @@ struct CreatePasswordView: View {
                     }
                     
                     Button(action: {
+                        impactMedium.impactOccurred()
                         if navigationTitle == "Add Password" {
                             password1.removeLast()
                         }
@@ -156,6 +161,7 @@ struct CreatePasswordView: View {
                 
                 }
                 .padding(.bottom, screen.height / 11)
+                .padding(.top)
                 
                 Text(samePassword ? "" : "The passwords don't match please try again.")
                     .multilineTextAlignment(.center)
@@ -169,6 +175,7 @@ struct CreatePasswordView: View {
                 password1 = ""
                 password2 = ""
                 samePassword = true
+                lockApp = false
             }) {
                 Text("Cancel")
             }
@@ -177,6 +184,8 @@ struct CreatePasswordView: View {
     }
     
     func addToPassword(number: String) {
+        impactMedium.impactOccurred()
+        
         if password1.count < 4 && password2 == "" {
             password1.append(number)
             
@@ -195,6 +204,7 @@ struct CreatePasswordView: View {
                     showAddPassword = false
                 }
                 else {
+                    generator.notificationOccurred(.error)
                     password1 = ""
                     password2 = ""
                     navigationTitle = "Add Password"

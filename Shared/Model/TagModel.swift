@@ -53,6 +53,8 @@ class TagModel: ObservableObject, Identifiable {
         catch {
             print(error.localizedDescription)
         }
+        
+        resetData()
     }
     
     func deleteData(id: UUID) {
@@ -75,5 +77,10 @@ class TagModel: ObservableObject, Identifiable {
     
     func getValue(obj: NSManagedObject) -> TagModel {
         return TagModel(name: obj.value(forKey: "name") as? String ?? "", id: obj.value(forKey: "id") as? UUID ?? UUID())
+    }
+    
+    func resetData() {
+        name = ""
+        id = UUID()
     }
 }
