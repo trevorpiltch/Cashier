@@ -11,6 +11,7 @@ struct RoundedRectImageItem: View {
     var imageName: String
     var color: Color
     var size: CGFloat
+    var fontSize: CGFloat = 20
     
     var body: some View {
         ZStack {
@@ -20,7 +21,7 @@ struct RoundedRectImageItem: View {
             
             Image(systemName: imageName)
                 .foregroundColor(.white)
-                .font(.title2)
+                .font(.system(size: fontSize, weight: .regular, design: .default))
         }
     }
 }
