@@ -43,8 +43,8 @@ struct ManageTagsView: View {
             ActionSheet(title: Text("Perform Delete?"), message: Text("Are you sure you want to delete this tag? This action cannot be undone."), buttons: [
                 .destructive(Text("Delete"), action: {
                     tagModel.deleteData(id: tagModel.getValue(obj: selectedObject[0]).id)
-            }),
-                    .cancel()
+                }),
+                .cancel()
             ]
             )
         }

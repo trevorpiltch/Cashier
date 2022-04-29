@@ -23,7 +23,7 @@ struct ContentView: View {
     @State var showCardDetail = false
     @State var showCardDetailFromHome = false
     @State var index = 0
-
+    
     //MARK: Views
     var body: some View {
         ZStack {
@@ -39,8 +39,8 @@ struct ContentView: View {
                 
                 NavigationView {
                     CardsView(cardModel: cardModel, expenseModel: expenseModel, showCardDetail: $showCardDetail, index: $index, namespace: namespace1)
-                       
-                    .navigationTitle("Cards")
+                    
+                        .navigationTitle("Cards")
                 }
                 .tabItem {
                     Image(systemName: "creditcard.fill")
